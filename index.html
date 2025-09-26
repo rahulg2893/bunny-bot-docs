@@ -16,49 +16,98 @@
         background: #f8f9fa;
         color: #333;
       }
+
       header {
         text-align: center;
         padding: 80px 20px;
         background: linear-gradient(135deg, #6c63ff, #4a47a3);
         color: white;
       }
+
       header h1 {
         font-size: 3rem;
         margin-bottom: 0.5rem;
       }
+
       header p {
         font-size: 1.2rem;
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
       }
+
+      /* Pill buttons */
       header .btn-group a {
         margin: 0 10px;
+        padding: 12px 26px;
+        font-weight: bold;
+        border-radius: 999px; /* pill style */
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.2s ease;
       }
+
+      .btn-invite {
+        background: #4caf50;
+        color: white;
+      }
+      .btn-invite:hover {
+        background: #45a049;
+        transform: scale(1.05);
+      }
+
+      .btn-docs {
+        background: #6c63ff;
+        color: white;
+      }
+      .btn-docs:hover {
+        background: #5b54d6;
+        transform: scale(1.05);
+      }
+
+      .btn-support {
+        background: #ff4081;
+        color: white;
+      }
+      .btn-support:hover {
+        background: #e73370;
+        transform: scale(1.05);
+      }
+
       section {
         padding: 60px 20px;
         max-width: 1000px;
         margin: auto;
       }
+
       section h2 {
         text-align: center;
         margin-bottom: 40px;
       }
+
       .features {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 20px;
       }
+
       .feature {
         background: white;
         padding: 20px;
-        border-radius: 10px;
+        border-radius: 12px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
       }
+
+      .feature:hover {
+        transform: translateY(-5px);
+      }
+
       footer {
         text-align: center;
         padding: 30px;
         background: #222;
         color: #aaa;
       }
+
       footer a {
         color: #6c63ff;
         text-decoration: none;
@@ -71,16 +120,16 @@
       <h1>🐰 Bunny Bot</h1>
       <p>
         Your all-in-one Discord companion — moderation, automod, logging,
-        starboard, bump reminders, and more.
+        starboard, bump reminders, music, and more.
       </p>
       <div class="btn-group">
         <a
-          class="button button-outline"
+          class="btn-invite"
           href="https://discord.com/oauth2/authorize?client_id=1411603909793026100&permissions=8&integration_type=0&scope=bot+applications.commands"
           >➕ Invite Bunny Bot</a
         >
-        <a class="button" href="docs.html">📘 Documentation</a>
-        <a class="button button-clear" href="https://discord.gg/nUVxJTKpNu"
+        <a class="btn-docs" href="docs.html">📘 Documentation</a>
+        <a class="btn-support" href="https://discord.gg/nUVxJTKpNu"
           >💬 Support Server</a
         >
       </div>
@@ -106,6 +155,12 @@
           <p>
             Track server growth, message activity, and user invites with
             detailed graphs.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>🎵 Music</h3>
+          <p>
+            Play music from YouTube and other sources with high-quality audio.
           </p>
         </div>
         <div class="feature">
