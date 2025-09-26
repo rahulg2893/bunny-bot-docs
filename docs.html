@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bunny Bot Documentation</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Roboto, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f8f9fa;
+        color: #333;
+      }
+      header {
+        text-align: center;
+        padding: 80px 20px;
+        background: linear-gradient(135deg, #6c63ff, #4a47a3);
+        color: white;
+      }
+      header h1 {
+        font-size: 2.8rem;
+        margin-bottom: 0.5rem;
+      }
+      header p {
+        font-size: 1.2rem;
+        margin-bottom: 2.5rem;
+      }
+      header .btn-group a {
+        margin: 0 10px;
+        padding: 12px 26px;
+        font-weight: bold;
+        border-radius: 999px;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.2s ease;
+      }
+      .btn-home {
+        background: #6c63ff;
+        color: white;
+      }
+      .btn-home:hover {
+        background: #5b54d6;
+        transform: scale(1.05);
+      }
+      .btn-support {
+        background: #ff4081;
+        color: white;
+      }
+      .btn-support:hover {
+        background: #e73370;
+        transform: scale(1.05);
+      }
+      section {
+        padding: 60px 20px;
+        max-width: 900px;
+        margin: auto;
+      }
+      section h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #4a47a3;
+      }
+      #searchBar {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 30px;
+        border: 2px solid #6c63ff;
+        border-radius: 999px;
+        font-size: 1rem;
+        outline: none;
+      }
+      .docs-category {
+        display: none;
+      }
+      .docs-category.active {
+        display: block;
+      }
+      .docs-category h3 {
+        margin-bottom: 15px;
+        color: #333;
+      }
+      .docs-category ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      .docs-category li {
+        background: white;
+        margin-bottom: 12px;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .docs-category li b {
+        color: #6c63ff;
+      }
+      .important {
+        background: #fff4d1;
+        border-left: 6px solid #ff9800;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+      }
+      .pagination {
+        text-align: center;
+        margin-top: 30px;
+      }
+      .pagination button {
+        background: #6c63ff;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        margin: 0 5px;
+        border-radius: 999px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.2s;
+      }
+      .pagination button:hover {
+        background: #5b54d6;
+      }
+      footer {
+        text-align: center;
+        padding: 30px;
+        background: #222;
+        color: #aaa;
+      }
+      footer a {
+        color: #6c63ff;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>📘 Bunny Bot Documentation</h1>
+      <p>Learn how to use Bunny Bot’s commands and features effectively.</p>
+      <div class="btn-group">
+        <a class="btn-home" href="index.html">🏠 Home</a>
+        <a class="btn-support" href="https://discord.gg/nUVxJTKpNu"
+          >💬 Support Server</a
+        >
+      </div>
+    </header>
+
+    <section>
+      <h2>🔍 Search Commands</h2>
+      <input
+        type="text"
+        id="searchBar"
+        placeholder="Type to search commands..."
+      />
+
+      <!-- Moderation -->
+      <div class="docs-category active">
+        <h3>⚒️ Moderation</h3>
+        <div class="important">
+          Moderation keeps your server safe. Jail and mute roles are automated
+          for convenience, no manual setup required.
+        </div>
+        <ul>
+          <li>
+            <b>,kick &lt;user&gt; [reason]</b> — Kick a member from the server.
+          </li>
+          <li><b>,ban &lt;user&gt; [reason]</b> — Permanently ban a member.</li>
+          <li><b>,unban &lt;user&gt;</b> — Unban a previously banned user.</li>
+          <li><b>,warn &lt;user&gt; [reason]</b> — Issue a warning.</li>
+          <li><b>,warnings &lt;user&gt;</b> — Check a user’s warnings.</li>
+          <li><b>,clearwarns &lt;user&gt;</b> — Clear all warnings.</li>
+          <li>
+            <b>,timeout &lt;user&gt; &lt;duration&gt;</b> — Temporarily mute.
+          </li>
+          <li>
+            <b>,jail &lt;user&gt;</b> — Restrict a user to a jail channel.
+          </li>
+          <li><b>,unjail &lt;user&gt;</b> — Release from jail.</li>
+          <li><b>,lock</b> / <b>,unlock</b> — Lock or unlock a channel.</li>
+        </ul>
+      </div>
+
+      <!-- AutoMod -->
+      <div class="docs-category">
+        <h3>🛡️ AutoMod & AntiNuke</h3>
+        <div class="important">
+          <b>Why it matters:</b> AutoMod prevents spam & raids. AntiNuke
+          protects against mass bans, role wipes, or channel nukes.
+        </div>
+        <ul>
+          <li><b>,am enable</b> — Enable AutoMod.</li>
+          <li><b>,am disable</b> — Disable AutoMod.</li>
+          <li><b>,am blacklist add &lt;word&gt;</b> — Block bad words.</li>
+          <li>
+            <b>,am spam &lt;seconds&gt; &lt;messages&gt;</b> — Spam filter.
+          </li>
+          <li><b>,am punishment &lt;action&gt;</b> — Choose warn/mute/ban.</li>
+          <li><b>,an enable</b> — Enable AntiNuke.</li>
+          <li>
+            <b>,an threshold &lt;action&gt; &lt;limit&gt;</b> — Limit actions
+            (e.g. bans/minute).
+          </li>
+          <li><b>,an defaultpun ban</b> — Default punishment on trigger.</li>
+        </ul>
+      </div>
+
+      <!-- Stats -->
+      <div class="docs-category">
+        <h3>📊 Stats & Invites</h3>
+        <div class="important">
+          Stats give insight into server activity. Invite tracking helps prevent
+          fake/alt raids.
+        </div>
+        <ul>
+          <li>
+            <b>,stats</b> — Today’s stats (messages, joins, leaves, voice).
+          </li>
+          <li><b>,stats week</b> — Last 7 days activity chart.</li>
+          <li><b>,mstats</b> — Member join/leave stats (30 days).</li>
+          <li><b>,inv [@user]</b> — Check invites of a member.</li>
+          <li><b>,inv top</b> — Leaderboard of top inviters.</li>
+          <li><b>,inv reset</b> — Reset all invite counts.</li>
+          <li><b>,inv reset @user</b> — Reset a specific user’s invites.</li>
+        </ul>
+      </div>
+
+      <!-- Music -->
+      <div class="docs-category">
+        <h3>🎵 Music</h3>
+        <div class="important">
+          Plays directly from YouTube. Requires FFmpeg installed on the host.
+        </div>
+        <ul>
+          <li><b>,play &lt;link|query&gt;</b> — Play music.</li>
+          <li><b>,pause</b> — Pause current song.</li>
+          <li><b>,resume</b> — Resume playback.</li>
+          <li><b>,stop</b> — Stop and leave VC.</li>
+          <li><b>,nowplaying</b> — Show current track.</li>
+        </ul>
+      </div>
+
+      <!-- Starboard -->
+      <div class="docs-category">
+        <h3>⭐ Starboard</h3>
+        <div class="important">
+          Starboard keeps the community’s best content alive by saving starred
+          messages.
+        </div>
+        <ul>
+          <li><b>,sb set &lt;#channel&gt;</b> — Set starboard channel.</li>
+          <li><b>,sb remove</b> — Remove starboard channel.</li>
+          <li><b>,sb top</b> — Top starred messages.</li>
+        </ul>
+      </div>
+
+      <!-- Bump Reminder -->
+      <div class="docs-category">
+        <h3>⏰ Bump Reminders</h3>
+        <div class="important">
+          Automates Disboard bumps: thanks bumpers, locks channel for cooldown,
+          pings when it’s time again.
+        </div>
+        <ul>
+          <li>
+            <b>,bremind set &lt;#channel&gt;</b> — Set bump reminder channel.
+          </li>
+          <li><b>,bremind remove</b> — Disable bump reminders.</li>
+        </ul>
+      </div>
+
+      <!-- Utilities -->
+      <div class="docs-category">
+        <h3>🛠️ Utilities</h3>
+        <ul>
+          <li><b>,afk &lt;reason&gt;</b> — Set AFK status.</li>
+          <li><b>,quote</b> — Quote a message.</li>
+          <li><b>,userinfo</b> — Show user info.</li>
+          <li><b>,serverinfo</b> — Show server info.</li>
+          <li><b>,welcome set</b> — Setup welcome messages.</li>
+          <li><b>,goodbye set</b> — Setup goodbye messages.</li>
+        </ul>
+      </div>
+
+      <!-- Pagination controls -->
+      <div class="pagination">
+        <button id="prevBtn">◀ Prev</button>
+        <button id="nextBtn">Next ▶</button>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        © 2025 Bunny Bot —
+        <a href="privacy.html">Privacy Policy</a> •
+        <a href="tos.html">Terms of Service</a> •
+        <a href="faq.html">FAQ</a>
+      </p>
+    </footer>
+
+    <script>
+      const categories = document.querySelectorAll(".docs-category");
+      let currentIndex = 0;
+
+      function showCategory(index) {
+        categories.forEach((cat, i) => {
+          cat.classList.toggle("active", i === index);
+        });
+      }
+
+      document.getElementById("nextBtn").addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % categories.length;
+        showCategory(currentIndex);
+      });
+
+      document.getElementById("prevBtn").addEventListener("click", () => {
+        currentIndex =
+          (currentIndex - 1 + categories.length) % categories.length;
+        showCategory(currentIndex);
+      });
+
+      // Search filter
+      document
+        .getElementById("searchBar")
+        .addEventListener("keyup", function () {
+          const query = this.value.toLowerCase();
+          categories.forEach((cat) => {
+            let found = false;
+            cat.querySelectorAll("li").forEach((item) => {
+              const match = item.textContent.toLowerCase().includes(query);
+              item.style.display = match ? "" : "none";
+              if (match) found = true;
+            });
+            cat.style.display = found || query === "" ? "" : "none";
+          });
+        });
+    </script>
+  </body>
+</html>
