@@ -1,322 +1,2231 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bunny Bot Documentation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Bunny Bot — Full Documentation</title>
+
+    <!-- Styles (self-contained) -->
     <style>
+      :root {
+        --brand-1: #6c63ff;
+        --brand-2: #4a47a3;
+        --muted: #6b7280;
+        --bg: #f6f7fb;
+        --card: #ffffff;
+        --accent: #ffb400;
+        --success: #28a745;
+        --danger: #e53e3e;
+      }
+      html,
       body {
-        font-family: "Segoe UI", Roboto, sans-serif;
+        height: 100%;
         margin: 0;
-        padding: 0;
-        background: #f8f9fa;
-        color: #333;
+        font-family: Inter, Segoe UI, Roboto, system-ui, -apple-system,
+          "Helvetica Neue", Arial;
+        background: var(--bg);
+        color: #111;
       }
-      header {
-        text-align: center;
-        padding: 80px 20px;
-        background: linear-gradient(135deg, #6c63ff, #4a47a3);
-        color: white;
-      }
-      header h1 {
-        font-size: 2.8rem;
-        margin-bottom: 0.5rem;
-      }
-      header p {
-        font-size: 1.2rem;
-        margin-bottom: 2.5rem;
-      }
-      header .btn-group a {
-        margin: 0 10px;
-        padding: 12px 26px;
-        font-weight: bold;
-        border-radius: 999px;
+      a {
+        color: var(--brand-1);
         text-decoration: none;
-        display: inline-block;
-        transition: all 0.2s ease;
       }
-      .btn-home {
-        background: #6c63ff;
+      header.site {
+        background: linear-gradient(135deg, var(--brand-1), var(--brand-2));
         color: white;
+        padding: 28px 22px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        box-shadow: 0 6px 20px rgba(30, 22, 100, 0.08);
       }
-      .btn-home:hover {
-        background: #5b54d6;
-        transform: scale(1.05);
+      header.site .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
       }
-      .btn-support {
-        background: #ff4081;
-        color: white;
+      header.site h1 {
+        font-size: 1.25rem;
+        margin: 0;
       }
-      .btn-support:hover {
-        background: #e73370;
-        transform: scale(1.05);
+      header.site p {
+        margin: 0;
+        opacity: 0.95;
+        font-size: 0.92rem;
       }
-      section {
-        padding: 60px 20px;
-        max-width: 900px;
-        margin: auto;
+      .container {
+        display: flex;
+        gap: 24px;
+        max-width: 1200px;
+        margin: 28px auto;
+        padding: 0 20px;
       }
-      section h2 {
-        text-align: center;
-        margin-bottom: 20px;
-        color: #4a47a3;
+      /* Sidebar */
+      nav.sidebar {
+        width: 280px;
+        background: var(--card);
+        border-radius: 12px;
+        padding: 18px;
+        box-shadow: 0 6px 18px rgba(20, 20, 30, 0.06);
+        height: calc(100vh - 140px);
+        overflow: auto;
+        position: sticky;
+        top: 76px;
       }
-      #searchBar {
-        width: 100%;
-        padding: 12px;
-        margin-bottom: 30px;
-        border: 2px solid #6c63ff;
+      nav.sidebar h3 {
+        margin: 0 0 10px 0;
+        font-size: 0.95rem;
+      }
+      nav .searchGlobal {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+      nav input[type="search"] {
+        flex: 1;
+        padding: 10px 12px;
         border-radius: 999px;
-        font-size: 1rem;
+        border: 1px solid #e6e9ef;
+        font-size: 0.95rem;
         outline: none;
       }
-      .docs-category {
-        display: none;
+      nav .quicklinks {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
       }
-      .docs-category.active {
-        display: block;
+      nav .quicklinks a {
+        padding: 8px 10px;
+        border-radius: 8px;
+        color: #222;
+        background: linear-gradient(180deg, #fff, #fbfbff);
+        box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.02);
       }
-      .docs-category h3 {
-        margin-bottom: 15px;
-        color: #333;
+      nav .section-title {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin: 14px 0 6px;
       }
-      .docs-category ul {
-        list-style: none;
-        padding-left: 0;
+      /* Main */
+      main.docs {
+        flex: 1;
+        min-width: 0;
       }
-      .docs-category li {
-        background: white;
-        margin-bottom: 12px;
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      .hero {
+        background: var(--card);
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 18px;
+        box-shadow: 0 6px 18px rgba(20, 20, 30, 0.04);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
-      .docs-category li b {
-        color: #6c63ff;
+      .hero .left {
+        max-width: 68%;
+      }
+      .hero h2 {
+        margin: 0 0 6px;
+        font-size: 1.3rem;
+      }
+      .hero p {
+        margin: 0;
+        color: var(--muted);
+      }
+      .hero .cta {
+        display: flex;
+        gap: 10px;
+      }
+      .pill {
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+      }
+      .pill.secondary {
+        background: #fff;
+        color: var(--brand-1);
+        border: 1px solid #eee;
+      }
+      /* category card */
+      .category {
+        background: var(--card);
+        border-radius: 12px;
+        padding: 18px;
+        margin-bottom: 18px;
+        box-shadow: 0 6px 18px rgba(20, 20, 30, 0.04);
+      }
+      .category h3 {
+        margin: 0 0 8px;
+      }
+      .category .lead {
+        color: var(--muted);
+        margin: 0 0 12px;
       }
       .important {
-        background: #fff4d1;
-        border-left: 6px solid #ff9800;
+        background: linear-gradient(180deg, #fff8e6, #fff4d1);
         padding: 12px;
-        margin-bottom: 15px;
-        border-radius: 6px;
+        border-left: 4px solid var(--accent);
+        border-radius: 8px;
+        margin-bottom: 12px;
       }
-      .pagination {
-        text-align: center;
-        margin-top: 30px;
+      /* command list */
+      .cmd-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 12px;
       }
-      .pagination button {
-        background: #6c63ff;
-        color: white;
-        border: none;
-        padding: 10px 18px;
-        margin: 0 5px;
-        border-radius: 999px;
-        cursor: pointer;
-        font-weight: bold;
-        transition: background 0.2s;
+      .cmd {
+        background: #fbfdff;
+        border-radius: 10px;
+        padding: 12px;
+        border: 1px solid #eef2ff;
+        position: relative;
       }
-      .pagination button:hover {
-        background: #5b54d6;
+      .cmd .title {
+        font-weight: 700;
+        color: var(--brand-2);
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        align-items: center;
       }
-      footer {
-        text-align: center;
-        padding: 30px;
+      .cmd pre {
+        background: #0b1220;
+        color: #dff1ff;
+        padding: 10px;
+        border-radius: 8px;
+        overflow: auto;
+        margin: 10px 0;
+        font-size: 0.9rem;
+      }
+      .cmd .desc {
+        color: var(--muted);
+        font-size: 0.95rem;
+        margin-top: 6px;
+      }
+      .copy-btn {
+        position: absolute;
+        right: 12px;
+        top: 12px;
         background: #222;
-        color: #aaa;
+        color: #fff;
+        padding: 6px 8px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        font-size: 12px;
       }
-      footer a {
-        color: #6c63ff;
-        text-decoration: none;
-        margin: 0 10px;
+      .meta {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 8px;
+      }
+      .pill-tag {
+        background: #eef2ff;
+        color: var(--brand-1);
+        padding: 6px 8px;
+        border-radius: 999px;
+        font-size: 12px;
+      }
+      /* collapsible */
+      .collapsible {
+        border-top: 1px dashed #eef2ff;
+        padding-top: 12px;
+        margin-top: 12px;
+      }
+      .toggle {
+        background: none;
+        border: none;
+        color: var(--brand-1);
+        cursor: pointer;
+        font-weight: 700;
+        padding: 6px 0;
+      }
+      /* pagination */
+      .pager {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .pager button {
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid #eee;
+        background: #fff;
+        cursor: pointer;
+      }
+      /* floating back to top */
+      .back-to-top {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        background: var(--brand-1);
+        color: white;
+        padding: 12px 14px;
+        border-radius: 999px;
+        box-shadow: 0 8px 30px rgba(80, 60, 200, 0.12);
+        cursor: pointer;
+        border: none;
+        z-index: 60;
+      }
+      /* responsive */
+      @media (max-width: 980px) {
+        .container {
+          flex-direction: column;
+          padding: 12px;
+        }
+        nav.sidebar {
+          position: static;
+          height: auto;
+          width: 100%;
+        }
+        .hero .left {
+          max-width: 100%;
+        }
+      }
+      mark.hl {
+        background: yellow;
+        color: #000;
+        padding: 0 2px;
+      }
+      .copied {
+        position: fixed;
+        right: 18px;
+        bottom: 80px;
+        background: #222;
+        color: #fff;
+        padding: 8px 12px;
+        border-radius: 6px;
+        opacity: 0.95;
+        z-index: 80;
+      }
+      .muted {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .section-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1>📘 Bunny Bot Documentation</h1>
-      <p>Learn how to use Bunny Bot’s commands and features effectively.</p>
-      <div class="btn-group">
-        <a class="btn-home" href="index.html">🏠 Home</a>
-        <a class="btn-support" href="https://discord.gg/nUVxJTKpNu"
-          >💬 Support Server</a
-        >
+    <header class="site">
+      <div class="brand">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <rect rx="6" width="24" height="24" fill="white" opacity="0.06" />
+          <path
+            d="M7 12c0 2.76 2.24 5 5 5s5-2.24 5-5"
+            stroke="white"
+            stroke-width="1.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <circle cx="12" cy="7" r="2.4" fill="white" />
+        </svg>
+        <div>
+          <h1>Bunny Bot Docs</h1>
+          <p style="margin-top: 6px">
+            Complete command reference, examples, and best-practice notes.
+          </p>
+        </div>
+      </div>
+
+      <div
+        style="margin-left: auto; display: flex; gap: 8px; align-items: center"
+      >
+        <a class="pill" href="index.html" aria-label="Home">🏠 Home</a>
+        <a class="pill secondary" href="privacy.html">Privacy</a>
+        <a class="pill secondary" href="tos.html">TOS</a>
       </div>
     </header>
 
-    <section>
-      <h2>🔍 Search Commands</h2>
-      <input
-        type="text"
-        id="searchBar"
-        placeholder="Type to search commands..."
-      />
-
-      <!-- Moderation -->
-      <div class="docs-category active">
-        <h3>⚒️ Moderation</h3>
-        <div class="important">
-          Moderation keeps your server safe. Jail and mute roles are automated
-          for convenience, no manual setup required.
+    <div class="container">
+      <!-- Sidebar -->
+      <nav class="sidebar" aria-label="Documentation navigation">
+        <div class="searchGlobal">
+          <input
+            id="globalSearch"
+            type="search"
+            placeholder="Search commands, descriptions..."
+            aria-label="Search docs"
+          />
         </div>
-        <ul>
-          <li>
-            <b>,kick &lt;user&gt; [reason]</b> — Kick a member from the server.
-          </li>
-          <li><b>,ban &lt;user&gt; [reason]</b> — Permanently ban a member.</li>
-          <li><b>,unban &lt;user&gt;</b> — Unban a previously banned user.</li>
-          <li><b>,warn &lt;user&gt; [reason]</b> — Issue a warning.</li>
-          <li><b>,warnings &lt;user&gt;</b> — Check a user’s warnings.</li>
-          <li><b>,clearwarns &lt;user&gt;</b> — Clear all warnings.</li>
-          <li>
-            <b>,timeout &lt;user&gt; &lt;duration&gt;</b> — Temporarily mute.
-          </li>
-          <li>
-            <b>,jail &lt;user&gt;</b> — Restrict a user to a jail channel.
-          </li>
-          <li><b>,unjail &lt;user&gt;</b> — Release from jail.</li>
-          <li><b>,lock</b> / <b>,unlock</b> — Lock or unlock a channel.</li>
-        </ul>
-      </div>
 
-      <!-- AutoMod -->
-      <div class="docs-category">
-        <h3>🛡️ AutoMod & AntiNuke</h3>
-        <div class="important">
-          <b>Why it matters:</b> AutoMod prevents spam & raids. AntiNuke
-          protects against mass bans, role wipes, or channel nukes.
+        <div class="section-title">Categories</div>
+        <div class="quicklinks" id="categoryLinks">
+          <!-- Links inserted by JS for exact ordering -->
         </div>
-        <ul>
-          <li><b>,am enable</b> — Enable AutoMod.</li>
-          <li><b>,am disable</b> — Disable AutoMod.</li>
-          <li><b>,am blacklist add &lt;word&gt;</b> — Block bad words.</li>
-          <li>
-            <b>,am spam &lt;seconds&gt; &lt;messages&gt;</b> — Spam filter.
-          </li>
-          <li><b>,am punishment &lt;action&gt;</b> — Choose warn/mute/ban.</li>
-          <li><b>,an enable</b> — Enable AntiNuke.</li>
-          <li>
-            <b>,an threshold &lt;action&gt; &lt;limit&gt;</b> — Limit actions
-            (e.g. bans/minute).
-          </li>
-          <li><b>,an defaultpun ban</b> — Default punishment on trigger.</li>
-        </ul>
-      </div>
 
-      <!-- Stats -->
-      <div class="docs-category">
-        <h3>📊 Stats & Invites</h3>
-        <div class="important">
-          Stats give insight into server activity. Invite tracking helps prevent
-          fake/alt raids.
+        <div class="section-title">Quick actions</div>
+        <a href="#getting-started">Get Started</a>
+        <a href="#setup">Setup</a>
+        <a href="#moderation">Moderation</a>
+        <a href="#automod">AutoMod & AntiNuke</a>
+        <a href="#stats">Stats & Invites</a>
+        <a href="#starboard">Starboard</a>
+        <a href="#bump">Bump Reminders</a>
+        <a href="#utility">Utilities</a>
+        <a href="#economy">Economy</a>
+        <a href="#social">Social</a>
+        <a href="#roles">Roles</a>
+        <a href="#reactions">Reactions</a>
+        <a href="#giveaways">Giveaways</a>
+        <a href="#vc">Custom VC</a>
+        <a href="#quests">Quests</a>
+        <a href="#games">Games & Counting</a>
+
+        <div style="margin-top: 18px" class="muted">
+          Tip: use <kbd>Ctrl/Cmd + F</kbd> or the search box above to quickly
+          find commands.
         </div>
-        <ul>
-          <li>
-            <b>,stats</b> — Today’s stats (messages, joins, leaves, voice).
-          </li>
-          <li><b>,stats week</b> — Last 7 days activity chart.</li>
-          <li><b>,mstats</b> — Member join/leave stats (30 days).</li>
-          <li><b>,inv [@user]</b> — Check invites of a member.</li>
-          <li><b>,inv top</b> — Leaderboard of top inviters.</li>
-          <li><b>,inv reset</b> — Reset all invite counts.</li>
-          <li><b>,inv reset @user</b> — Reset a specific user’s invites.</li>
-        </ul>
-      </div>
+      </nav>
 
-      <!-- Starboard -->
-      <div class="docs-category">
-        <h3>⭐ Starboard</h3>
-        <div class="important">
-          Starboard keeps the community’s best content alive by saving starred
-          messages.
-        </div>
-        <ul>
-          <li><b>,sb set &lt;#channel&gt;</b> — Set starboard channel.</li>
-          <li><b>,sb remove</b> — Remove starboard channel.</li>
-          <li><b>,sb top</b> — Top starred messages.</li>
-        </ul>
-      </div>
+      <!-- Main docs -->
+      <main class="docs" id="mainDocs">
+        <!-- Hero / Get started -->
+        <section class="hero" id="getting-started">
+          <div class="left">
+            <h2>Get started — invite, configure, enjoy</h2>
+            <p>
+              Invite Bunny Bot, run <code>,setup</code> once (recommended), then
+              configure modules via the commands below. Most commands require
+              Manage Server or Administrator permissions — where noted.
+            </p>
+            <div style="display: flex; gap: 8px; margin-top: 12px">
+              <a
+                class="pill"
+                href="https://discord.com/oauth2/authorize?client_id=1411603909793026100&permissions=8&scope=bot%20applications.commands"
+                >➕ Invite</a
+              >
+              <button
+                class="pill secondary"
+                onclick="document.getElementById('globalSearch').focus()"
+              >
+                🔎 Search Docs
+              </button>
+            </div>
+          </div>
+          <div class="right" style="text-align: right; color: #ffffff60">
+            <div style="font-weight: 700">Bunny Bot</div>
+            <div style="font-size: 0.9rem; margin-top: 6px">
+              Moderation • AutoMod • Stats • Starboard • Utilities
+            </div>
+          </div>
+        </section>
 
-      <!-- Bump Reminder -->
-      <div class="docs-category">
-        <h3>⏰ Bump Reminders</h3>
-        <div class="important">
-          Automates Disboard bumps: thanks bumpers, locks channel for cooldown,
-          pings when it’s time again.
-        </div>
-        <ul>
-          <li>
-            <b>,bremind set &lt;#channel&gt;</b> — Set bump reminder channel.
-          </li>
-          <li><b>,bremind remove</b> — Disable bump reminders.</li>
-        </ul>
-      </div>
+        <!-- We'll generate category sections here -->
+        <div id="categoriesContainer"></div>
 
-      <!-- Utilities -->
-      <div class="docs-category">
-        <h3>🛠️ Utilities</h3>
-        <ul>
-          <li><b>,afk &lt;reason&gt;</b> — Set AFK status.</li>
-          <li><b>,quote</b> — Quote a message.</li>
-          <li><b>,userinfo</b> — Show user info.</li>
-          <li><b>,serverinfo</b> — Show server info.</li>
-          <li><b>,welcome set</b> — Setup welcome messages.</li>
-          <li><b>,goodbye set</b> — Setup goodbye messages.</li>
-        </ul>
-      </div>
+        <footer style="margin-top: 18px">
+          <div class="category" style="text-align: center">
+            <div style="font-weight: 700">Need more help?</div>
+            <div class="muted" style="margin-top: 6px">
+              Join the support server or open a ticket
+            </div>
+            <div style="margin-top: 10px">
+              <a class="pill secondary" href="https://discord.gg/nUVxJTKpNu"
+                >💬 Support</a
+              >
+              <a class="pill" href="https://buymeacoffee.com/bunnybot"
+                >☕ Donate</a
+              >
+            </div>
+          </div>
+          <p style="text-align: center; color: var(--muted)">
+            © 2025 Bunny Bot — Documentation
+          </p>
+        </footer>
+      </main>
+    </div>
 
-      <!-- Pagination controls -->
-      <div class="pagination">
-        <button id="prevBtn">◀ Prev</button>
-        <button id="nextBtn">Next ▶</button>
-      </div>
-    </section>
+    <button class="back-to-top" id="backTop" title="Back to top">⬆</button>
 
-    <footer>
-      <p>
-        © 2025 Bunny Bot —
-        <a href="privacy.html">Privacy Policy</a> •
-        <a href="tos.html">Terms of Service</a> •
-        <a href="faq.html">FAQ</a>
-      </p>
-    </footer>
-
+    <div id="copiedToast" class="copied" style="display: none">
+      Copied to clipboard ✓
+    </div>
+    <!-- Data for categories & commands (derived from help.py) -->
     <script>
-      const categories = document.querySelectorAll(".docs-category");
-      let currentIndex = 0;
+      const DOC_CATEGORIES = [
+        {
+          id: "setup",
+          title: "⚙️ Setup",
+          short: "Initial server setup and automation.",
+          why: `Run once after invite. Setup creates mod logs, muted/jailed roles, channels and permission overwrites so moderation features work out-of-the-box.`,
+          commands: [
+            {
+              cmd: ",setup",
+              syntax: ",setup",
+              example: ",setup",
+              perms: "Administrator",
+              desc: "Configure server (create #mod-logs, #logs, roles — automated).",
+            },
+          ],
+        },
 
-      function showCategory(index) {
-        categories.forEach((cat, i) => {
-          cat.classList.toggle("active", i === index);
+        {
+          id: "moderation",
+          title: "⚒️ Moderation",
+          short:
+            "Kick/ban/timeouts/logging, fake permissions & command toggle system.",
+          why: `Moderation commands enforce rules and keep your community safe. Logs are important for audit trails and appeals.`,
+          commands: [
+            {
+              cmd: ",kick <user> [reason]",
+              syntax: ",kick <user> [reason]",
+              example: ",kick @baduser spamming",
+              perms: "Kick Members",
+              desc: "Kick a member (not permanent).",
+            },
+            {
+              cmd: ",ban <user> [reason]",
+              syntax: ",ban <user> [reason]",
+              example: ",ban @troll raid",
+              perms: "Ban Members",
+              desc: "Permanently ban a user.",
+            },
+            {
+              cmd: ",unban <user>",
+              syntax: ",unban <user>",
+              example: ",unban 123456789012345678",
+              perms: "Ban Members",
+              desc: "Unban a previously banned user.",
+            },
+            {
+              cmd: ",warn <user> [reason]",
+              syntax: ",warn <user> [reason]",
+              example: ",warn @user posting spoilers",
+              perms: "Manage Messages",
+              desc: "Add a warning entry for a user.",
+            },
+            {
+              cmd: ",warnings <user>",
+              syntax: ",warnings <user>",
+              example: ",warnings @user",
+              perms: "Manage Server",
+              desc: "List warnings for a user.",
+            },
+            {
+              cmd: ",removewarn <user> <case_id>",
+              syntax: ",removewarn <user> <case_id>",
+              example: ",removewarn @user 5",
+              perms: "Manage Server",
+              desc: "Remove a specific warning by case id.",
+            },
+            {
+              cmd: ",clearwarns <user>",
+              syntax: ",clearwarns <user>",
+              example: ",clearwarns @user",
+              perms: "Manage Server",
+              desc: "Clear all warnings for a user.",
+            },
+
+            {
+              cmd: ",timeout <user> <duration> [reason]",
+              syntax: ",timeout <user> <duration> [reason]",
+              example: ",timeout @user 10m spamming",
+              perms: "Moderate Members",
+              desc: "Temporarily put a user in timeout (mute).",
+            },
+            {
+              cmd: ",removetimeout <user>",
+              syntax: ",removetimeout <user>",
+              example: ",removetimeout @user",
+              perms: "Moderate Members",
+              desc: "Remove an active timeout.",
+            },
+            {
+              cmd: ",timeoutlist",
+              syntax: ",timeoutlist",
+              example: ",timeoutlist",
+              perms: "Moderate Members",
+              desc: "List users currently timed out.",
+            },
+
+            {
+              cmd: ",lock",
+              syntax: ",lock",
+              example: ",lock",
+              perms: "Manage Channels",
+              desc: "Lock current channel for @everyone.",
+            },
+            {
+              cmd: ",unlock",
+              syntax: ",unlock",
+              example: ",unlock",
+              perms: "Manage Channels",
+              desc: "Unlock current channel.",
+            },
+            {
+              cmd: ",lockall",
+              syntax: ",lockall",
+              example: ",lockall",
+              perms: "Manage Channels",
+              desc: "Lock all channels (useful during raids).",
+            },
+            {
+              cmd: ",unlockall",
+              syntax: ",unlockall",
+              example: ",unlockall",
+              perms: "Manage Channels",
+              desc: "Unlock all channels.",
+            },
+            {
+              cmd: ",tl / tul / tlall / tulall",
+              syntax: ",tl (thread lock) etc",
+              example: ",tl",
+              perms: "Manage Threads",
+              desc: "Thread lock/unlock variants.",
+            },
+            {
+              cmd: ",slowmodeon <seconds>",
+              syntax: ",slowmodeon <seconds>",
+              example: ",slowmodeon 10",
+              perms: "Manage Channels",
+              desc: "Enable slowmode for current channel.",
+            },
+            {
+              cmd: ",slowmodeoff",
+              syntax: ",slowmodeoff",
+              example: ",slowmodeoff",
+              perms: "Manage Channels",
+              desc: "Disable slowmode.",
+            },
+
+            {
+              cmd: ",jail <user> [reason]",
+              syntax: ",jail <user> [reason]",
+              example: ",jail @troublemaker",
+              perms: "Manage Roles",
+              desc: "Restrict a user by moving them to a jailed role (limited permissions).",
+            },
+            {
+              cmd: ",unjail <user>",
+              syntax: ",unjail <user>",
+              example: ",unjail @troublemaker",
+              perms: "Manage Roles",
+              desc: "Release user from jail role.",
+            },
+
+            {
+              cmd: ",purge <amount>",
+              syntax: ",purge <amount>",
+              example: ",purge 50",
+              perms: "Manage Messages",
+              desc: "Bulk delete messages.",
+            },
+            {
+              cmd: ",purgelinks <amount>",
+              syntax: ",purgelinks <amount>",
+              example: ",purgelinks 50",
+              perms: "Manage Messages",
+              desc: "Delete messages containing links.",
+            },
+            {
+              cmd: ",purgeimages <amount>",
+              syntax: ",purgeimages <amount>",
+              example: ",purgeimages 25",
+              perms: "Manage Messages",
+              desc: "Delete messages containing images.",
+            },
+            {
+              cmd: ",purgeemojis <amount>",
+              syntax: ",purgeemojis <amount>",
+              example: ",purgeemojis 25",
+              perms: "Manage Messages",
+              desc: "Delete messages with custom emojis.",
+            },
+            {
+              cmd: ",purgestickers <amount>",
+              syntax: ",purgestickers <amount>",
+              example: ",purgestickers 25",
+              perms: "Manage Messages",
+              desc: "Delete sticker messages.",
+            },
+
+            {
+              cmd: ",fp add <role> <permission>",
+              syntax: ",fp add <role> <permission>",
+              example: ",fp add @helper kick_members",
+              perms: "Manage Roles",
+              desc: "Fake-permissions system (simulate perms for commands without changing real role perms).",
+            },
+            {
+              cmd: ",fp remove <role> <permission>",
+              syntax: ",fp remove <role> <permission>",
+              example: ",fp remove @helper kick_members",
+              perms: "Manage Roles",
+              desc: "Remove fake permission.",
+            },
+            {
+              cmd: ",fp list <role>",
+              syntax: ",fp list <role>",
+              example: ",fp list @helper",
+              perms: "Manage Roles",
+              desc: "List fake permissions for a role.",
+            },
+            {
+              cmd: "Available fake perms",
+              syntax:
+                "administrator, manage_guild, manage_roles, manage_channels, manage_messages, kick_members, ban_members, moderate_members",
+              example: "",
+              perms: "",
+              desc: "These are the permissions you can fake.",
+            },
+
+            {
+              cmd: ",setlogs <#channel>",
+              syntax: ",setlogs <#channel>",
+              example: ",setlogs #mod-logs",
+              perms: "Manage Guild",
+              desc: "Set channel for moderation logs and AntiNuke logs.",
+            },
+
+            {
+              cmd: ",ct enable <command>",
+              syntax: ",ct enable <command>",
+              example: ",ct enable purge",
+              perms: "Manage Guild",
+              desc: "Enable a command for the server.",
+            },
+            {
+              cmd: ",ct disable <command>",
+              syntax: ",ct disable <command>",
+              example: ",ct disable ban",
+              perms: "Manage Guild",
+              desc: "Disable a command for the server.",
+            },
+            {
+              cmd: ",ct list",
+              syntax: ",ct list",
+              example: ",ct list",
+              perms: "Manage Guild",
+              desc: "List toggled commands.",
+            },
+          ],
+        },
+
+        {
+          id: "automod",
+          title: "🛡️ AutoMod & AntiNuke",
+          short:
+            "Filters to prevent spam, raids, links and destructive admin actions.",
+          why: `AutoMod filters spam, mass mentions, caps, invites and links to reduce noise and mitigate raids. AntiNuke watches for high-risk admin actions (mass bans/role deletes) and can revert or punish offenders.`,
+          commands: [
+            {
+              cmd: ",am enable",
+              syntax: ",am enable",
+              example: ",am enable",
+              perms: "Guild Owner",
+              desc: "Enable AutoMod globally.",
+            },
+            {
+              cmd: ",am disable",
+              syntax: ",am disable",
+              example: ",am disable",
+              perms: "Guild Owner",
+              desc: "Disable AutoMod.",
+            },
+
+            {
+              cmd: ",am blacklist add <word>",
+              syntax: ",am blacklist add <word>",
+              example: ",am blacklist add badword",
+              perms: "Guild Owner",
+              desc: "Add a word to the AutoMod blacklist.",
+            },
+            {
+              cmd: ",am blacklist remove <word>",
+              syntax: ",am blacklist remove <word>",
+              example: ",am blacklist remove badword",
+              perms: "Guild Owner",
+              desc: "Remove word from blacklist.",
+            },
+            {
+              cmd: ",am blacklist list",
+              syntax: ",am blacklist list",
+              example: ",am blacklist list",
+              perms: "Guild Owner",
+              desc: "List blacklisted words.",
+            },
+
+            {
+              cmd: ",am links <on|off> [#channel|all]",
+              syntax: ",am links <on|off> [#channel|all]",
+              example: ",am links on #general",
+              perms: "Guild Owner",
+              desc: "Block links (regex-based).",
+            },
+            {
+              cmd: ",am invites <on|off> [#channel|all]",
+              syntax: ",am invites <on|off> [#channel|all]",
+              example: ",am invites on",
+              perms: "Guild Owner",
+              desc: "Block server invites.",
+            },
+            {
+              cmd: ",am massmention <limit|off> [#channel|all]",
+              syntax: ",am massmention <limit|off> [#channel|all]",
+              example: ",am massmention 5",
+              perms: "Guild Owner",
+              desc: "Limit number of mentions allowed in a message.",
+            },
+            {
+              cmd: ",am caps <percent|off> [#channel|all]",
+              syntax: ",am caps <percent|off> [#channel|all]",
+              example: ",am caps 70",
+              perms: "Guild Owner",
+              desc: "Block messages with too many capital letters.",
+            },
+            {
+              cmd: ",am spam <seconds> <messages> [#channel|all]",
+              syntax: ",am spam <seconds> <messages> [#channel|all]",
+              example: ",am spam 10 6",
+              perms: "Guild Owner",
+              desc: "Spam detection (N messages within seconds).",
+            },
+            {
+              cmd: ",am punishment <warn|mute|kick|ban|delete|timeout>",
+              syntax: ",am punishment <action>",
+              example: ",am punishment timeout",
+              perms: "Guild Owner",
+              desc: "Set default punishment.",
+            },
+            {
+              cmd: ",am action <module> <punishment>",
+              syntax: ",am action <module> <punishment>",
+              example: ",am action links kick",
+              perms: "Guild Owner",
+              desc: "Set per-module punishment.",
+            },
+            {
+              cmd: ",am timeout <seconds>",
+              syntax: ",am timeout <seconds>",
+              example: ",am timeout 60",
+              perms: "Guild Owner",
+              desc: "Timeout duration used when punishment = timeout.",
+            },
+
+            {
+              cmd: ",am wl add <user|role|channel> <id>",
+              syntax: ",am wl add <user|role|channel> <id>",
+              example: ",am wl add user 1234",
+              perms: "Guild Owner",
+              desc: "Whitelist an entity from AutoMod.",
+            },
+            {
+              cmd: ",am wl remove <user|role|channel> <id>",
+              syntax: ",am wl remove <user|role|channel> <id>",
+              example: ",am wl remove channel 1234",
+              perms: "Guild Owner",
+              desc: "Remove whitelist entry.",
+            },
+            {
+              cmd: ",am wl list",
+              syntax: ",am wl list",
+              example: ",am wl list",
+              perms: "Guild Owner",
+              desc: "List whitelist entries.",
+            },
+
+            {
+              cmd: ",an enable",
+              syntax: ",an enable",
+              example: ",an enable",
+              perms: "Guild Owner",
+              desc: "Enable AntiNuke.",
+            },
+            {
+              cmd: ",an disable",
+              syntax: ",an disable",
+              example: ",an disable",
+              perms: "Guild Owner",
+              desc: "Disable AntiNuke.",
+            },
+            {
+              cmd: ",an wl add/remove/list",
+              syntax: ",an wl add <type> <id>",
+              example: ",an wl add user 1234",
+              perms: "Guild Owner",
+              desc: "AntiNuke whitelist.",
+            },
+            {
+              cmd: ",an settings",
+              syntax: ",an settings",
+              example: ",an settings",
+              perms: "Guild Owner",
+              desc: "Show AntiNuke settings.",
+            },
+            {
+              cmd: ",an threshold <action> <limit> <seconds>",
+              syntax: ",an threshold <action> <limit> <seconds>",
+              example: ",an threshold ban 3 60",
+              perms: "Guild Owner",
+              desc: "Set threshold for mass actions.",
+            },
+            {
+              cmd: ",an defaultpun <strip|ban|kick|timeout>",
+              syntax: ",an defaultpun <action>",
+              example: ",an defaultpun strip",
+              perms: "Guild Owner",
+              desc: "Default AntiNuke punishment.",
+            },
+            {
+              cmd: ",an pun <action> <punishment>",
+              syntax: ",an pun <action> <punishment>",
+              example: ",an pun role_delete ban",
+              perms: "Guild Owner",
+              desc: "Per-action punishment.",
+            },
+            {
+              cmd: ",an denybotjoins <true|false>",
+              syntax: ",an denybotjoins <true|false>",
+              example: ",an denybotjoins true",
+              perms: "Guild Owner",
+              desc: "Block bot joins automatically.",
+            },
+          ],
+        },
+        {
+          id: "utility",
+          title: "🛠️ Utility",
+          short:
+            "General tools, AFK, embeds, autoresponders, tickets, timezones, birthdays.",
+          why: `Utility commands enhance user experience — from simple AFK notices to powerful systems like tickets, autoresponders, and starboard.`,
+          commands: [
+            {
+              cmd: ",ping",
+              syntax: ",ping",
+              example: ",ping",
+              perms: "None",
+              desc: "Check bot latency.",
+            },
+            {
+              cmd: ",avatar [user]",
+              syntax: ",avatar [@user]",
+              example: ",avatar @friend",
+              perms: "None",
+              desc: "View avatar of a user.",
+            },
+            {
+              cmd: ",userinfo [user]",
+              syntax: ",userinfo [@user]",
+              example: ",userinfo @me",
+              perms: "None",
+              desc: "Show info of a user.",
+            },
+            {
+              cmd: ",serverinfo",
+              syntax: ",serverinfo",
+              example: ",serverinfo",
+              perms: "None",
+              desc: "Display info about the server.",
+            },
+            {
+              cmd: ",serverbanner",
+              syntax: ",serverbanner",
+              example: ",serverbanner",
+              perms: "None",
+              desc: "View server banner.",
+            },
+            {
+              cmd: ",membercount",
+              syntax: ",membercount",
+              example: ",membercount",
+              perms: "None",
+              desc: "Show member count.",
+            },
+            {
+              cmd: ",quote",
+              syntax: ",quote <message link>",
+              example: ",quote https://discord.com/channels/...",
+              perms: "None",
+              desc: "Quote a message.",
+            },
+
+            {
+              cmd: ",afk <reason>",
+              syntax: ",afk <reason>",
+              example: ",afk eating dinner",
+              perms: "None",
+              desc: "Mark yourself as AFK.",
+            },
+
+            {
+              cmd: ",embed create|list|edit|delete",
+              syntax: ",embed create <title>|list|edit <id>|delete <id>",
+              example: ",embed create Hello World",
+              perms: "Manage Messages",
+              desc: "Manage embeds via commands.",
+            },
+
+            {
+              cmd: ",welcome set <#channel> <message>",
+              syntax: ",welcome set <#channel> <message>",
+              example: ',welcome set #general "Welcome {user}!"',
+              perms: "Manage Guild",
+              desc: "Set welcome message.",
+            },
+            {
+              cmd: ",goodbye set <#channel> <message>",
+              syntax: ",goodbye set <#channel> <message>",
+              example: ',goodbye set #general "Goodbye {user}"',
+              perms: "Manage Guild",
+              desc: "Set goodbye message.",
+            },
+            {
+              cmd: ",welcome view",
+              syntax: ",welcome view",
+              example: ",welcome view",
+              perms: "Manage Guild",
+              desc: "View current welcome config.",
+            },
+            {
+              cmd: ",goodbye view",
+              syntax: ",goodbye view",
+              example: ",goodbye view",
+              perms: "Manage Guild",
+              desc: "View goodbye config.",
+            },
+
+            {
+              cmd: ",stats",
+              syntax: ",stats",
+              example: ",stats",
+              perms: "Manage Guild",
+              desc: "Show today’s stats.",
+            },
+            {
+              cmd: ",stats week",
+              syntax: ",stats week",
+              example: ",stats week",
+              perms: "Manage Guild",
+              desc: "Show past 7 days stats.",
+            },
+            {
+              cmd: ",mstats",
+              syntax: ",mstats",
+              example: ",mstats",
+              perms: "Manage Guild",
+              desc: "Show message activity stats.",
+            },
+            {
+              cmd: ",inv [user]",
+              syntax: ",inv [@user]",
+              example: ",inv @me",
+              perms: "Manage Guild",
+              desc: "Show invites of a user.",
+            },
+            {
+              cmd: ",inv top",
+              syntax: ",inv top",
+              example: ",inv top",
+              perms: "Manage Guild",
+              desc: "Leaderboard of inviters.",
+            },
+            {
+              cmd: ",inv reset",
+              syntax: ",inv reset",
+              example: ",inv reset",
+              perms: "Manage Guild",
+              desc: "Reset all invites.",
+            },
+            {
+              cmd: ",inv reset @user",
+              syntax: ",inv reset @user",
+              example: ",inv reset @friend",
+              perms: "Manage Guild",
+              desc: "Reset invites for a specific user.",
+            },
+
+            {
+              cmd: ",autoresponder add <trigger> <response>",
+              syntax: ",autoresponder add <word> <reply>",
+              example: ',autoresponder add "hi" "Hello there!"',
+              perms: "Manage Guild",
+              desc: "Add autoresponder.",
+            },
+            {
+              cmd: ",autoresponder edit <id> <response>",
+              syntax: ",autoresponder edit <id> <response>",
+              example: ",autoresponder edit 2 Updated reply",
+              perms: "Manage Guild",
+              desc: "Edit autoresponder.",
+            },
+            {
+              cmd: ",autoresponder remove <id>",
+              syntax: ",autoresponder remove <id>",
+              example: ",autoresponder remove 3",
+              perms: "Manage Guild",
+              desc: "Remove autoresponder.",
+            },
+            {
+              cmd: ",autoresponder list",
+              syntax: ",autoresponder list",
+              example: ",autoresponder list",
+              perms: "Manage Guild",
+              desc: "List all autoresponders.",
+            },
+
+            {
+              cmd: ",stickymessage add <#channel> <text>",
+              syntax: ",stickymessage add <#channel> <text>",
+              example: ",stickymessage add #rules Don't spam",
+              perms: "Manage Guild",
+              desc: "Add sticky message to a channel.",
+            },
+            {
+              cmd: ",stickymessage view",
+              syntax: ",stickymessage view",
+              example: ",stickymessage view",
+              perms: "Manage Guild",
+              desc: "View sticky messages.",
+            },
+            {
+              cmd: ",stickymessage remove <id>",
+              syntax: ",stickymessage remove <id>",
+              example: ",stickymessage remove 1",
+              perms: "Manage Guild",
+              desc: "Remove sticky message.",
+            },
+
+            {
+              cmd: ",poj add <@user>",
+              syntax: ",poj add <@user>",
+              example: ",poj add @me",
+              perms: "Manage Guild",
+              desc: "Ping a user when they join.",
+            },
+            {
+              cmd: ",poj remove <@user>",
+              syntax: ",poj remove <@user>",
+              example: ",poj remove @me",
+              perms: "Manage Guild",
+              desc: "Remove ping on join for user.",
+            },
+            {
+              cmd: ",poj list",
+              syntax: ",poj list",
+              example: ",poj list",
+              perms: "Manage Guild",
+              desc: "List ping on join targets.",
+            },
+            {
+              cmd: ",poj clear",
+              syntax: ",poj clear",
+              example: ",poj clear",
+              perms: "Manage Guild",
+              desc: "Clear ping on join settings.",
+            },
+
+            {
+              cmd: ",bremind set <#channel>",
+              syntax: ",bremind set <#channel>",
+              example: ",bremind set #bump-here",
+              perms: "Manage Guild",
+              desc: "Set bump reminder channel.",
+            },
+            {
+              cmd: ",bremind remove",
+              syntax: ",bremind remove",
+              example: ",bremind remove",
+              perms: "Manage Guild",
+              desc: "Disable bump reminders.",
+            },
+
+            {
+              cmd: ",ticket setup",
+              syntax: ",ticket setup",
+              example: ",ticket setup",
+              perms: "Manage Guild",
+              desc: "Setup ticket system.",
+            },
+            {
+              cmd: ",ticket open",
+              syntax: ",ticket open",
+              example: ",ticket open",
+              perms: "Everyone",
+              desc: "Open a ticket.",
+            },
+            {
+              cmd: ",ticket claim",
+              syntax: ",ticket claim",
+              example: ",ticket claim",
+              perms: "Support Role",
+              desc: "Claim a ticket.",
+            },
+            {
+              cmd: ",ticket close",
+              syntax: ",ticket close",
+              example: ",ticket close",
+              perms: "Support Role",
+              desc: "Close a ticket.",
+            },
+            {
+              cmd: ",ticket reopen",
+              syntax: ",ticket reopen",
+              example: ",ticket reopen",
+              perms: "Support Role",
+              desc: "Reopen a closed ticket.",
+            },
+            {
+              cmd: ",ticket add <@user>",
+              syntax: ",ticket add <@user>",
+              example: ",ticket add @friend",
+              perms: "Support Role",
+              desc: "Add user to a ticket.",
+            },
+            {
+              cmd: ",ticket remove <@user>",
+              syntax: ",ticket remove <@user>",
+              example: ",ticket remove @friend",
+              perms: "Support Role",
+              desc: "Remove user from a ticket.",
+            },
+            {
+              cmd: ",ticket setdelete <true|false>",
+              syntax: ",ticket setdelete <true|false>",
+              example: ",ticket setdelete true",
+              perms: "Manage Guild",
+              desc: "Delete tickets on close.",
+            },
+
+            {
+              cmd: ",backup create",
+              syntax: ",backup create",
+              example: ",backup create",
+              perms: "Administrator",
+              desc: "Create a server backup.",
+            },
+            {
+              cmd: ",backup list",
+              syntax: ",backup list",
+              example: ",backup list",
+              perms: "Administrator",
+              desc: "List server backups.",
+            },
+            {
+              cmd: ",backup export <id>",
+              syntax: ",backup export <id>",
+              example: ",backup export 12345",
+              perms: "Administrator",
+              desc: "Export backup as file.",
+            },
+            {
+              cmd: ",backup preview <id>",
+              syntax: ",backup preview <id>",
+              example: ",backup preview 12345",
+              perms: "Administrator",
+              desc: "Preview backup contents.",
+            },
+            {
+              cmd: ",backup restore <id>",
+              syntax: ",backup restore <id>",
+              example: ",backup restore 12345",
+              perms: "Administrator",
+              desc: "Restore server from backup.",
+            },
+            {
+              cmd: ",backup delete <id>",
+              syntax: ",backup delete <id>",
+              example: ",backup delete 12345",
+              perms: "Administrator",
+              desc: "Delete a backup.",
+            },
+
+            {
+              cmd: ",tz",
+              syntax: ",tz",
+              example: ",tz",
+              perms: "None",
+              desc: "Show your timezone.",
+            },
+            {
+              cmd: ",tz set <city>",
+              syntax: ",tz set <city>",
+              example: ",tz set London",
+              perms: "None",
+              desc: "Set your timezone.",
+            },
+            {
+              cmd: ",tz user <@user>",
+              syntax: ",tz user <@user>",
+              example: ",tz user @friend",
+              perms: "None",
+              desc: "View another user’s timezone.",
+            },
+
+            {
+              cmd: ",birthday set <YYYY-MM-DD>",
+              syntax: ",birthday set <YYYY-MM-DD>",
+              example: ",birthday set 2000-01-01",
+              perms: "None",
+              desc: "Set your birthday.",
+            },
+            {
+              cmd: ",bday [user]",
+              syntax: ",bday [user]",
+              example: ",bday @friend",
+              perms: "None",
+              desc: "Check user birthday.",
+            },
+            {
+              cmd: ",birthday role <@role>",
+              syntax: ",birthday role <@role>",
+              example: ",birthday role @Birthday",
+              perms: "Manage Roles",
+              desc: "Set birthday role.",
+            },
+            {
+              cmd: ",birthday list",
+              syntax: ",birthday list",
+              example: ",birthday list",
+              perms: "Manage Guild",
+              desc: "List all birthdays.",
+            },
+            {
+              cmd: ",resetbirthday",
+              syntax: ",resetbirthday",
+              example: ",resetbirthday",
+              perms: "None",
+              desc: "Reset your birthday.",
+            },
+
+            {
+              cmd: ",movie <title>",
+              syntax: ",movie <title>",
+              example: ",movie Inception",
+              perms: "None",
+              desc: "Fetch movie info.",
+            },
+            {
+              cmd: ",tv <title>",
+              syntax: ",tv <title>",
+              example: ",tv Breaking Bad",
+              perms: "None",
+              desc: "Fetch TV show info.",
+            },
+            {
+              cmd: ",anime <title>",
+              syntax: ",anime <title>",
+              example: ",anime Naruto",
+              perms: "None",
+              desc: "Fetch anime info.",
+            },
+            {
+              cmd: ",book <title>",
+              syntax: ",book <title>",
+              example: ",book The Hobbit",
+              perms: "None",
+              desc: "Fetch book info.",
+            },
+            {
+              cmd: ",manga <title>",
+              syntax: ",manga <title>",
+              example: ",manga One Piece",
+              perms: "None",
+              desc: "Fetch manga info.",
+            },
+            {
+              cmd: ",game <title>",
+              syntax: ",game <title>",
+              example: ",game Minecraft",
+              perms: "None",
+              desc: "Fetch game info.",
+            },
+
+            {
+              cmd: ",sb set <#channel> [min_stars]",
+              syntax: ",sb set <#channel> [min_stars]",
+              example: ",sb set #starboard 3",
+              perms: "Manage Guild",
+              desc: "Enable starboard.",
+            },
+            {
+              cmd: ",sb remove",
+              syntax: ",sb remove",
+              example: ",sb remove",
+              perms: "Manage Guild",
+              desc: "Remove starboard.",
+            },
+            {
+              cmd: ",sb top",
+              syntax: ",sb top",
+              example: ",sb top",
+              perms: "Manage Guild",
+              desc: "Show top starred messages.",
+            },
+          ],
+        },
+
+        {
+          id: "economy",
+          title: "💰 Economy",
+          short: "Virtual money, jobs, gambling, shop.",
+          why: `Economy gamifies the server, giving members goals and engagement. Helps boost activity with daily/weekly rewards and fun games.`,
+          commands: [
+            {
+              cmd: ",balance [user]",
+              syntax: ",balance [user]",
+              example: ",balance @me",
+              perms: "None",
+              desc: "Show balance.",
+            },
+            {
+              cmd: ",deposit <amount>",
+              syntax: ",deposit <amount>",
+              example: ",deposit 100",
+              perms: "None",
+              desc: "Deposit to bank.",
+            },
+            {
+              cmd: ",withdraw <amount>",
+              syntax: ",withdraw <amount>",
+              example: ",withdraw 50",
+              perms: "None",
+              desc: "Withdraw from bank.",
+            },
+            {
+              cmd: ",transfer <user> <amount>",
+              syntax: ",transfer <user> <amount>",
+              example: ",transfer @friend 20",
+              perms: "None",
+              desc: "Transfer money.",
+            },
+
+            {
+              cmd: ",daily",
+              syntax: ",daily",
+              example: ",daily",
+              perms: "None",
+              desc: "Daily reward.",
+            },
+            {
+              cmd: ",work",
+              syntax: ",work",
+              example: ",work",
+              perms: "None",
+              desc: "Work for money.",
+            },
+            {
+              cmd: ",job",
+              syntax: ",job",
+              example: ",job",
+              perms: "None",
+              desc: "Get a random job task.",
+            },
+            {
+              cmd: ",rob <user>",
+              syntax: ",rob <user>",
+              example: ",rob @friend",
+              perms: "None",
+              desc: "Attempt to rob another user.",
+            },
+            {
+              cmd: ",crime",
+              syntax: ",crime",
+              example: ",crime",
+              perms: "None",
+              desc: "Commit a crime for reward or punishment.",
+            },
+
+            {
+              cmd: ",shop",
+              syntax: ",shop",
+              example: ",shop",
+              perms: "None",
+              desc: "View shop items.",
+            },
+            {
+              cmd: ",buy <item>",
+              syntax: ",buy <item>",
+              example: ",buy sword",
+              perms: "None",
+              desc: "Buy an item.",
+            },
+            {
+              cmd: ",sell <item>",
+              syntax: ",sell <item>",
+              example: ",sell sword",
+              perms: "None",
+              desc: "Sell an item.",
+            },
+            {
+              cmd: ",inventory",
+              syntax: ",inventory",
+              example: ",inventory",
+              perms: "None",
+              desc: "View inventory.",
+            },
+            {
+              cmd: ",use <item>",
+              syntax: ",use <item>",
+              example: ",use sword",
+              perms: "None",
+              desc: "Use an item.",
+            },
+
+            {
+              cmd: ",dice <amount>",
+              syntax: ",dice <amount>",
+              example: ",dice 50",
+              perms: "None",
+              desc: "Gamble dice roll.",
+            },
+            {
+              cmd: ",coinflip <amount> <heads|tails>",
+              syntax: ",coinflip <amount> <choice>",
+              example: ",coinflip 100 heads",
+              perms: "None",
+              desc: "Flip a coin.",
+            },
+            {
+              cmd: ",blackjack <amount>",
+              syntax: ",blackjack <amount>",
+              example: ",blackjack 200",
+              perms: "None",
+              desc: "Play blackjack.",
+            },
+
+            {
+              cmd: ",setbal <user> <amount>",
+              syntax: ",setbal <user> <amount>",
+              example: ",setbal @user 1000",
+              perms: "Administrator",
+              desc: "Set user balance.",
+            },
+            {
+              cmd: ",addmoney <user> <amount>",
+              syntax: ",addmoney <user> <amount>",
+              example: ",addmoney @user 200",
+              perms: "Administrator",
+              desc: "Add money to user.",
+            },
+            {
+              cmd: ",removemoney <user> <amount>",
+              syntax: ",removemoney <user> <amount>",
+              example: ",removemoney @user 200",
+              perms: "Administrator",
+              desc: "Remove money.",
+            },
+            {
+              cmd: ",resetbal <user>",
+              syntax: ",resetbal <user>",
+              example: ",resetbal @user",
+              perms: "Administrator",
+              desc: "Reset balance.",
+            },
+            {
+              cmd: ",shopadd <key> <price>",
+              syntax: ",shopadd <key> <price>",
+              example: ",shopadd potion 50",
+              perms: "Administrator",
+              desc: "Add shop item.",
+            },
+            {
+              cmd: ",shopremove <key>",
+              syntax: ",shopremove <key>",
+              example: ",shopremove potion",
+              perms: "Administrator",
+              desc: "Remove shop item.",
+            },
+            {
+              cmd: ",shopedit <key>",
+              syntax: ",shopedit <key>",
+              example: ",shopedit potion",
+              perms: "Administrator",
+              desc: "Edit shop item.",
+            },
+            {
+              cmd: ",shoplist",
+              syntax: ",shoplist",
+              example: ",shoplist",
+              perms: "Administrator",
+              desc: "List shop items.",
+            },
+          ],
+        },
+        {
+          id: "social",
+          title: "🎉 Social",
+          short: "Levels, relationships, roleplay actions, fun commands.",
+          why: `Social features keep members engaged. XP systems encourage activity, and fun roleplay commands build community bonding.`,
+          commands: [
+            {
+              cmd: ",rank [user]",
+              syntax: ",rank [user]",
+              example: ",rank @me",
+              perms: "None",
+              desc: "Show user rank/level.",
+            },
+            {
+              cmd: ",leaderboard",
+              syntax: ",leaderboard",
+              example: ",leaderboard",
+              perms: "None",
+              desc: "View XP leaderboard.",
+            },
+            {
+              cmd: ",setlevel <user> <level>",
+              syntax: ",setlevel <@user> <level>",
+              example: ",setlevel @user 5",
+              perms: "Administrator",
+              desc: "Set a user's level.",
+            },
+            {
+              cmd: ",setxp <user> <amount>",
+              syntax: ",setxp <@user> <amount>",
+              example: ",setxp @user 1000",
+              perms: "Administrator",
+              desc: "Set XP amount.",
+            },
+            {
+              cmd: ",resetxp <user>",
+              syntax: ",resetxp <@user>",
+              example: ",resetxp @user",
+              perms: "Administrator",
+              desc: "Reset XP for a user.",
+            },
+            {
+              cmd: ",resetall",
+              syntax: ",resetall",
+              example: ",resetall",
+              perms: "Administrator",
+              desc: "Reset all XP and levels.",
+            },
+
+            {
+              cmd: ",marry <user>",
+              syntax: ",marry <@user>",
+              example: ",marry @partner",
+              perms: "None",
+              desc: "Marry a user.",
+            },
+            {
+              cmd: ",divorce",
+              syntax: ",divorce",
+              example: ",divorce",
+              perms: "None",
+              desc: "Divorce your partner.",
+            },
+            {
+              cmd: ",adopt <user>",
+              syntax: ",adopt <@user>",
+              example: ",adopt @child",
+              perms: "None",
+              desc: "Adopt a user.",
+            },
+            {
+              cmd: ",disown <user>",
+              syntax: ",disown <@user>",
+              example: ",disown @child",
+              perms: "None",
+              desc: "Disown a user.",
+            },
+            {
+              cmd: ",family [user]",
+              syntax: ",family [user]",
+              example: ",family @me",
+              perms: "None",
+              desc: "View family tree.",
+            },
+
+            {
+              cmd: ",hug <user>",
+              syntax: ",hug <@user>",
+              example: ",hug @friend",
+              perms: "None",
+              desc: "Hug someone.",
+            },
+            {
+              cmd: ",kiss <user>",
+              syntax: ",kiss <@user>",
+              example: ",kiss @friend",
+              perms: "None",
+              desc: "Kiss someone.",
+            },
+            {
+              cmd: ",slap <user>",
+              syntax: ",slap <@user>",
+              example: ",slap @friend",
+              perms: "None",
+              desc: "Slap someone playfully.",
+            },
+            {
+              cmd: ",punch <user>",
+              syntax: ",punch <@user>",
+              example: ",punch @friend",
+              perms: "None",
+              desc: "Punch someone playfully.",
+            },
+            {
+              cmd: ",cuddle <user>",
+              syntax: ",cuddle <@user>",
+              example: ",cuddle @friend",
+              perms: "None",
+              desc: "Cuddle someone.",
+            },
+            {
+              cmd: ",pat <user>",
+              syntax: ",pat <@user>",
+              example: ",pat @friend",
+              perms: "None",
+              desc: "Pat someone.",
+            },
+            {
+              cmd: ",poke <user>",
+              syntax: ",poke <@user>",
+              example: ",poke @friend",
+              perms: "None",
+              desc: "Poke someone.",
+            },
+            {
+              cmd: ",tickle <user>",
+              syntax: ",tickle <@user>",
+              example: ",tickle @friend",
+              perms: "None",
+              desc: "Tickle someone.",
+            },
+            {
+              cmd: ",highfive <user>",
+              syntax: ",highfive <@user>",
+              example: ",highfive @friend",
+              perms: "None",
+              desc: "High five.",
+            },
+            {
+              cmd: ",handshake <user>",
+              syntax: ",handshake <@user>",
+              example: ",handshake @friend",
+              perms: "None",
+              desc: "Handshake someone.",
+            },
+
+            {
+              cmd: ",dance",
+              syntax: ",dance",
+              example: ",dance",
+              perms: "None",
+              desc: "Do a dance.",
+            },
+            {
+              cmd: ",angry",
+              syntax: ",angry",
+              example: ",angry",
+              perms: "None",
+              desc: "Show angry emotion.",
+            },
+            {
+              cmd: ",blush",
+              syntax: ",blush",
+              example: ",blush",
+              perms: "None",
+              desc: "Blush.",
+            },
+            {
+              cmd: ",cry",
+              syntax: ",cry",
+              example: ",cry",
+              perms: "None",
+              desc: "Cry.",
+            },
+            {
+              cmd: ",smile",
+              syntax: ",smile",
+              example: ",smile",
+              perms: "None",
+              desc: "Smile.",
+            },
+            {
+              cmd: ",laugh",
+              syntax: ",laugh",
+              example: ",laugh",
+              perms: "None",
+              desc: "Laugh.",
+            },
+            {
+              cmd: ",facepalm",
+              syntax: ",facepalm",
+              example: ",facepalm",
+              perms: "None",
+              desc: "Do a facepalm.",
+            },
+            {
+              cmd: ",shrug",
+              syntax: ",shrug",
+              example: ",shrug",
+              perms: "None",
+              desc: "Shrug gesture.",
+            },
+            {
+              cmd: ",bored",
+              syntax: ",bored",
+              example: ",bored",
+              perms: "None",
+              desc: "Express boredom.",
+            },
+          ],
+        },
+
+        {
+          id: "roles",
+          title: "🎚️ Roles",
+          short: "Create, manage, autoroles, booster roles.",
+          why: `Role management is crucial for permissions and server organization. Booster roles reward server boosters with customization.`,
+          commands: [
+            {
+              cmd: ",rolecreate <name>",
+              syntax: ",rolecreate <name>",
+              example: ",rolecreate VIP",
+              perms: "Manage Roles",
+              desc: "Create a role.",
+            },
+            {
+              cmd: ",roledelete <role>",
+              syntax: ",roledelete <@role>",
+              example: ",roledelete @OldRole",
+              perms: "Manage Roles",
+              desc: "Delete a role.",
+            },
+            {
+              cmd: ",roleinfo <role>",
+              syntax: ",roleinfo <@role>",
+              example: ",roleinfo @VIP",
+              perms: "Manage Roles",
+              desc: "View role info.",
+            },
+            {
+              cmd: ",roleadd <user> <role>",
+              syntax: ",roleadd <@user> <@role>",
+              example: ",roleadd @user @VIP",
+              perms: "Manage Roles",
+              desc: "Add a role to user.",
+            },
+            {
+              cmd: ",roleremove <user> <role>",
+              syntax: ",roleremove <@user> <@role>",
+              example: ",roleremove @user @VIP",
+              perms: "Manage Roles",
+              desc: "Remove role from user.",
+            },
+
+            {
+              cmd: ",autorole add <role>",
+              syntax: ",autorole add <@role>",
+              example: ",autorole add @Member",
+              perms: "Manage Guild",
+              desc: "Set autorole on join.",
+            },
+            {
+              cmd: ",autorole remove <role>",
+              syntax: ",autorole remove <@role>",
+              example: ",autorole remove @Member",
+              perms: "Manage Guild",
+              desc: "Remove autorole.",
+            },
+            {
+              cmd: ",autorole list",
+              syntax: ",autorole list",
+              example: ",autorole list",
+              perms: "Manage Guild",
+              desc: "List autoroles.",
+            },
+            {
+              cmd: ",autorole clear",
+              syntax: ",autorole clear",
+              example: ",autorole clear",
+              perms: "Manage Guild",
+              desc: "Clear all autoroles.",
+            },
+
+            {
+              cmd: ",br <hex1> <hex2> <role>",
+              syntax: ",br <hex1> <hex2> <role>",
+              example: ",br #ff0000 #00ff00 Booster",
+              perms: "Manage Roles",
+              desc: "Set gradient color for booster role.",
+            },
+            {
+              cmd: ",br rename <name>",
+              syntax: ",br rename <name>",
+              example: ",br rename VIP",
+              perms: "Manage Roles",
+              desc: "Rename booster role.",
+            },
+            {
+              cmd: ",br color <hex>",
+              syntax: ",br color <hex>",
+              example: ",br color #ff0000",
+              perms: "Manage Roles",
+              desc: "Change booster role color.",
+            },
+            {
+              cmd: ",br icon <emoji/url>",
+              syntax: ",br icon <emoji/url>",
+              example: ",br icon 🐇",
+              perms: "Manage Roles",
+              desc: "Set booster role icon.",
+            },
+            {
+              cmd: ",br remove",
+              syntax: ",br remove",
+              example: ",br remove",
+              perms: "Manage Roles",
+              desc: "Remove booster role setup.",
+            },
+          ],
+        },
+
+        {
+          id: "reactions",
+          title: "🤖 Reactions",
+          short: "Reaction roles & text triggers.",
+          why: `Reaction roles allow self-assignment of roles; reaction text can automate small responses.`,
+          commands: [
+            {
+              cmd: ",rr add <message_id> <emoji> <role>",
+              syntax: ",rr add <message_id> <emoji> <@role>",
+              example: ",rr add 123456 😀 @VIP",
+              perms: "Manage Roles",
+              desc: "Add reaction role.",
+            },
+            {
+              cmd: ",rr remove <message_id> <emoji>",
+              syntax: ",rr remove <message_id> <emoji>",
+              example: ",rr remove 123456 😀",
+              perms: "Manage Roles",
+              desc: "Remove reaction role.",
+            },
+            {
+              cmd: ",rr list [message_id]",
+              syntax: ",rr list [message_id]",
+              example: ",rr list 123456",
+              perms: "Manage Roles",
+              desc: "List reaction roles.",
+            },
+
+            {
+              cmd: ",rt add <word> <emoji>",
+              syntax: ",rt add <word> <emoji>",
+              example: ",rt add hello 👋",
+              perms: "Manage Messages",
+              desc: "Add reaction text rule.",
+            },
+            {
+              cmd: ",rt remove <word> <emoji>",
+              syntax: ",rt remove <word> <emoji>",
+              example: ",rt remove hello 👋",
+              perms: "Manage Messages",
+              desc: "Remove reaction text rule.",
+            },
+            {
+              cmd: ",rt list",
+              syntax: ",rt list",
+              example: ",rt list",
+              perms: "Manage Messages",
+              desc: "List reaction text rules.",
+            },
+          ],
+        },
+
+        {
+          id: "giveaways",
+          title: "🎁 Giveaways",
+          short: "Create, edit, manage giveaways.",
+          why: `Giveaways encourage engagement and community activity. They can be used to reward active members.`,
+          commands: [
+            {
+              cmd: ",giveaway start",
+              syntax: ",giveaway start",
+              example: ",giveaway start",
+              perms: "Manage Guild",
+              desc: "Start a giveaway.",
+            },
+            {
+              cmd: ",giveaway end <id>",
+              syntax: ",giveaway end <id>",
+              example: ",giveaway end 123",
+              perms: "Manage Guild",
+              desc: "End giveaway early.",
+            },
+            {
+              cmd: ",giveaway cancel <id>",
+              syntax: ",giveaway cancel <id>",
+              example: ",giveaway cancel 123",
+              perms: "Manage Guild",
+              desc: "Cancel a giveaway.",
+            },
+            {
+              cmd: ",giveaway reroll <id>",
+              syntax: ",giveaway reroll <id>",
+              example: ",giveaway reroll 123",
+              perms: "Manage Guild",
+              desc: "Reroll winners.",
+            },
+            {
+              cmd: ",giveaway list",
+              syntax: ",giveaway list",
+              example: ",giveaway list",
+              perms: "Manage Guild",
+              desc: "List active giveaways.",
+            },
+            {
+              cmd: ",giveaway edit <id>",
+              syntax: ",giveaway edit <id> <field> <value>",
+              example: ',giveaway edit 123 prize "New Prize"',
+              perms: "Manage Guild",
+              desc: "Edit giveaway.",
+            },
+          ],
+        },
+
+        {
+          id: "vc",
+          title: "🎀 Custom VC",
+          short: "Temporary personal voice channels.",
+          why: `Custom VC lets members create private rooms dynamically. Reduces clutter by auto-deleting when empty.`,
+          commands: [
+            {
+              cmd: ",vcsetup",
+              syntax: ",vcsetup",
+              example: ",vcsetup",
+              perms: "Manage Guild",
+              desc: "Setup voice hub.",
+            },
+            {
+              cmd: ",vccmd lock",
+              syntax: ",vccmd lock",
+              example: ",vccmd lock",
+              perms: "Manage Guild",
+              desc: "Lock VC.",
+            },
+            {
+              cmd: ",vccmd unlock",
+              syntax: ",vccmd unlock",
+              example: ",vccmd unlock",
+              perms: "Manage Guild",
+              desc: "Unlock VC.",
+            },
+            {
+              cmd: ",vccmd claim",
+              syntax: ",vccmd claim",
+              example: ",vccmd claim",
+              perms: "Manage Guild",
+              desc: "Claim VC ownership.",
+            },
+          ],
+        },
+
+        {
+          id: "quests",
+          title: "📜 Quests",
+          short: "Daily and event quests.",
+          why: `Quests give members goals to achieve, encouraging daily engagement and community interaction.`,
+          commands: [
+            {
+              cmd: ",quest start <type>",
+              syntax: ",quest start <type>",
+              example: ",quest start daily",
+              perms: "None",
+              desc: "Start a quest.",
+            },
+            {
+              cmd: ",quest status",
+              syntax: ",quest status",
+              example: ",quest status",
+              perms: "None",
+              desc: "Show current quest.",
+            },
+            {
+              cmd: ",quest list",
+              syntax: ",quest list",
+              example: ",quest list",
+              perms: "None",
+              desc: "List available quests.",
+            },
+            {
+              cmd: ",quest claim",
+              syntax: ",quest claim",
+              example: ",quest claim",
+              perms: "None",
+              desc: "Claim quest reward.",
+            },
+          ],
+        },
+
+        {
+          id: "games",
+          title: "🎮 Games & Counting",
+          short: "Mini-games and counting channel.",
+          why: `Games are fun ways to engage members. Counting channels gamify activity in chat.`,
+          commands: [
+            {
+              cmd: ",tictactoe <user>",
+              syntax: ",tictactoe <@user>",
+              example: ",tictactoe @friend",
+              perms: "None",
+              desc: "Play Tic-Tac-Toe.",
+            },
+            {
+              cmd: ",rps",
+              syntax: ",rps",
+              example: ",rps",
+              perms: "None",
+              desc: "Play Rock-Paper-Scissors.",
+            },
+            {
+              cmd: ",guessnumber",
+              syntax: ",guessnumber",
+              example: ",guessnumber",
+              perms: "None",
+              desc: "Guess a number.",
+            },
+            {
+              cmd: ",countset <#channel>",
+              syntax: ",countset <#channel>",
+              example: ",countset #counting",
+              perms: "Manage Guild",
+              desc: "Set counting channel.",
+            },
+            {
+              cmd: ",countreset",
+              syntax: ",countreset",
+              example: ",countreset",
+              perms: "Manage Guild",
+              desc: "Reset counting channel.",
+            },
+            {
+              cmd: ",countrules",
+              syntax: ",countrules",
+              example: ",countrules",
+              perms: "None",
+              desc: "View counting rules.",
+            },
+          ],
+        },
+      ]; // end of DOC_CATEGORIES
+
+      // UI helpers and rendering
+      const categoriesContainer = document.getElementById(
+        "categoriesContainer"
+      );
+      const categoryLinks = document.getElementById("categoryLinks");
+
+      function buildDocs() {
+        DOC_CATEGORIES.forEach((cat) => {
+          // sidebar link
+          const a = document.createElement("a");
+          a.href = `#${cat.id}`;
+          a.textContent = cat.title.replace(/^[^ ]+ /, "");
+          a.onclick = (e) => {
+            e.preventDefault();
+            document
+              .getElementById(cat.id)
+              .scrollIntoView({ behavior: "smooth" });
+          };
+          categoryLinks.appendChild(a);
+
+          // section
+          const sec = document.createElement("section");
+          sec.className = "category";
+          sec.id = cat.id;
+
+          const head = document.createElement("div");
+          head.className = "section-head";
+          head.innerHTML = `<h3>${cat.title}</h3><div class="muted">${cat.short}</div>`;
+          sec.appendChild(head);
+
+          if (cat.why) {
+            const why = document.createElement("div");
+            why.className = "important";
+            why.innerHTML = `<strong>Why this matters:</strong> ${cat.why}`;
+            sec.appendChild(why);
+          }
+
+          const grid = document.createElement("div");
+          grid.className = "cmd-grid";
+          cat.commands.forEach((cmd) => {
+            const card = document.createElement("div");
+            card.className = "cmd";
+
+            const title = document.createElement("div");
+            title.className = "title";
+            title.textContent = cmd.cmd;
+            card.appendChild(title);
+
+            const copy = document.createElement("button");
+            copy.className = "copy-btn small";
+            copy.textContent = "Copy";
+            copy.onclick = (e) => {
+              e.stopPropagation();
+              navigator.clipboard.writeText(cmd.syntax);
+              const toast = document.getElementById("copiedToast");
+              toast.style.display = "block";
+              setTimeout(() => (toast.style.display = "none"), 1000);
+            };
+            card.appendChild(copy);
+
+            const pre = document.createElement("pre");
+            pre.textContent = cmd.syntax;
+            card.appendChild(pre);
+
+            if (cmd.example) {
+              const ex = document.createElement("div");
+              ex.className = "desc";
+              ex.innerHTML = `<strong>Example:</strong> <code>${cmd.example}</code>`;
+              card.appendChild(ex);
+            }
+
+            const meta = document.createElement("div");
+            meta.className = "meta";
+            if (cmd.perms && cmd.perms !== "None") {
+              meta.innerHTML += `<span class="pill-tag">Perms: ${cmd.perms}</span>`;
+            }
+            if (cmd.desc) {
+              meta.innerHTML += `<span style="color:var(--muted)">${cmd.desc}</span>`;
+            }
+            card.appendChild(meta);
+
+            grid.appendChild(card);
+          });
+
+          sec.appendChild(grid);
+          categoriesContainer.appendChild(sec);
         });
       }
 
-      document.getElementById("nextBtn").addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % categories.length;
-        showCategory(currentIndex);
-      });
-
-      document.getElementById("prevBtn").addEventListener("click", () => {
-        currentIndex =
-          (currentIndex - 1 + categories.length) % categories.length;
-        showCategory(currentIndex);
-      });
-
-      // Search filter
-      document
-        .getElementById("searchBar")
-        .addEventListener("keyup", function () {
-          const query = this.value.toLowerCase();
-          categories.forEach((cat) => {
-            let found = false;
-            cat.querySelectorAll("li").forEach((item) => {
-              const match = item.textContent.toLowerCase().includes(query);
-              item.style.display = match ? "" : "none";
-              if (match) found = true;
-            });
-            cat.style.display = found || query === "" ? "" : "none";
+      // Search
+      function setupSearch() {
+        const input = document.getElementById("globalSearch");
+        input.addEventListener("input", function () {
+          const q = this.value.trim().toLowerCase();
+          const cards = document.querySelectorAll(".cmd");
+          cards.forEach((c) => {
+            const text = c.textContent.toLowerCase();
+            c.style.display = !q || text.includes(q) ? "" : "none";
           });
         });
+      }
+
+      document
+        .getElementById("backTop")
+        .addEventListener("click", () =>
+          window.scrollTo({ top: 0, behavior: "smooth" })
+        );
+
+      buildDocs();
+      setupSearch();
     </script>
   </body>
 </html>
