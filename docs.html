@@ -2114,6 +2114,38 @@
             },
           ],
         },
+
+        {
+          id: "twitch",
+          title: "📺 Twitch Notifications",
+          short: "Get notified when your favorite streamers go live.",
+          why: `Twitch integration keeps your community updated on streams. Great for gaming servers, esports orgs, or streamers with Discord communities. The bot fetches live status via the Twitch API and announces it once per stream.`,
+          commands: [
+            {
+              cmd: ",twitch add <#channel> <streamer|link>",
+              syntax: ",twitch add <#channel> <streamer|link>",
+              example:
+                ",twitch add #streams ninja\n,twitch add #streams https://twitch.tv/ninja",
+              perms: "Manage Server",
+              desc: "Add a streamer to be announced in the specified channel.",
+            },
+            {
+              cmd: ",twitch remove <streamer|link>",
+              syntax: ",twitch remove <streamer|link>",
+              example:
+                ",twitch remove ninja\n,twitch remove https://twitch.tv/ninja",
+              perms: "Manage Server",
+              desc: "Remove Twitch notifications for a streamer.",
+            },
+            {
+              cmd: ",twitch list",
+              syntax: ",twitch list",
+              example: ",twitch list",
+              perms: "Manage Server",
+              desc: "List all configured Twitch streamers and their channels.",
+            },
+          ],
+        },
       ]; // end of DOC_CATEGORIES
 
       // UI helpers and rendering
