@@ -2177,6 +2177,35 @@
             },
           ],
         },
+        {
+          id: "kick",
+          title: "🥊 Kick Notifications",
+          short: "Get notified when Kick streamers go live.",
+          why: `Kick integration keeps your community updated on Kick streams. Great for gaming servers and streamer communities. The bot checks the Kick API for live status and announces once per stream.`,
+          commands: [
+            {
+              cmd: ",k add <#channel> <streamer>",
+              syntax: ",k add <#channel> <streamer>",
+              example: ",k add #streams trainwreckstv",
+              perms: "Manage Server",
+              desc: "Add a Kick streamer to be announced in the specified channel.",
+            },
+            {
+              cmd: ",k remove <streamer>",
+              syntax: ",k remove <streamer>",
+              example: ",k remove trainwreckstv",
+              perms: "Manage Server",
+              desc: "Remove Kick notifications for a streamer.",
+            },
+            {
+              cmd: ",k list",
+              syntax: ",k list",
+              example: ",k list",
+              perms: "Manage Server",
+              desc: "List all configured Kick streamers and their channels.",
+            },
+          ],
+        },
       ]; // end of DOC_CATEGORIES
 
       // UI helpers and rendering
