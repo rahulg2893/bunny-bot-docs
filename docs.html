@@ -2117,7 +2117,7 @@
 
         {
           id: "twitch",
-          title: "📺 Twitch Notifications",
+          title: "📺 Twitch",
           short: "Get notified when your favorite streamers go live.",
           why: `Twitch integration keeps your community updated on streams. Great for gaming servers, esports orgs, or streamers with Discord communities. The bot fetches live status via the Twitch API and announces it once per stream.`,
           commands: [
@@ -2143,6 +2143,37 @@
               example: ",twitch list",
               perms: "Manage Server",
               desc: "List all configured Twitch streamers and their channels.",
+            },
+          ],
+        },
+        {
+          id: "youtube",
+          title: "📢 YouTube",
+          short: "Get notified when your favorite YouTubers upload new videos.",
+          why: `YouTube integration keeps your community updated on new content from your favorite creators. Great for content-focused servers, fan groups, or communities that follow specific YouTubers.`,
+          commands: [
+            {
+              cmd: ",yt add <#channel> <channel_url|handle|id>",
+              syntax: ",yt add <#channel> <channel_url|handle|id>",
+              example:
+                ",yt add #videos https://youtube.com/@MrBeast\n,yt add #videos UCX6OQ3DkcsbYNE6H8uQQuVA",
+              perms: "Manage Server",
+              desc: "Add a YouTube channel to be announced in the specified channel.",
+            },
+            {
+              cmd: ",yt remove <channel_url|handle|id>",
+              syntax: ",yt remove <channel_url|handle|id>",
+              example:
+                ",yt remove https://youtube.com/@MrBeast\n,yt remove UCX6OQ3DkcsbYNE6H8uQQuVA",
+              perms: "Manage Server",
+              desc: "Remove YouTube notifications for a channel.",
+            },
+            {
+              cmd: ",yt list",
+              syntax: ",yt list",
+              example: ",yt list",
+              perms: "Manage Server",
+              desc: "List all configured YouTube channels and their channels.",
             },
           ],
         },
