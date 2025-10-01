@@ -1865,6 +1865,22 @@
         },
 
         {
+          id: "suggestions",
+          title: "💡 Suggestions",
+          short: "Submit feedback or feature requests for Bunny Bot.",
+          why: `Suggestions let users directly share ideas with the Bunny Bot developers. Each suggestion is reviewed by the support team and can be approved or denied.`,
+          commands: [
+            {
+              cmd: ",suggest <idea>",
+              syntax: ",suggest <idea>",
+              example: ",suggest Add a music cog to the bot!",
+              perms: "None",
+              desc: "Submit a suggestion (one per hour, only from servers). Approved/denied suggestions will notify you via DM.",
+            },
+          ],
+        },
+
+        {
           id: "reactions",
           title: "🤖 Reactions",
           short: "Reaction roles & text triggers.",
@@ -2156,7 +2172,7 @@
         },
         {
           id: "kick",
-          title: "🥊 Kick",
+          title: "🥊 Kick Notifications",
           short: "Get notified when Kick streamers go live.",
           why: `Kick integration keeps your community updated on Kick streams. Great for gaming servers and streamer communities. The bot checks the Kick API for live status and announces once per stream.`,
           commands: [
