@@ -874,6 +874,30 @@
             },
           ],
         },
+
+        {
+          id: "verification",
+          title: "🔒 Verification",
+          short: "Secure member verification system.",
+          why: `Verification ensures only real users can access your server. Supports captcha (with retries + lockouts), reaction verification, or button verification.`,
+          commands: [
+            {
+              cmd: ",verify enable <captcha|reaction|button> [#channel]",
+              syntax: ",verify enable <mode> [#channel]",
+              example: ",verify enable captcha #verify-here",
+              perms: "Administrator",
+              desc: "Enable verification in the chosen mode. Captcha requires solving a code, reaction uses ✅ emoji, button uses a persistent button.",
+            },
+            {
+              cmd: ",verify disable",
+              syntax: ",verify disable",
+              example: ",verify disable",
+              perms: "Administrator",
+              desc: "Disable verification completely for the server.",
+            },
+          ],
+        },
+
         {
           id: "utility",
           title: "🛠️ Utility",
@@ -2209,7 +2233,6 @@
 
       function buildDocs() {
         DOC_CATEGORIES.forEach((cat) => {
-          // sidebar link
           const a = document.createElement("a");
           a.href = `#${cat.id}`;
           a.textContent = cat.title.replace(/^[^ ]+ /, "");
@@ -2221,7 +2244,6 @@
           };
           categoryLinks.appendChild(a);
 
-          // section
           const sec = document.createElement("section");
           sec.className = "category";
           sec.id = cat.id;
@@ -2290,15 +2312,48 @@
         });
       }
 
-      // Search
+      // Helper to highlight text
+      function highlightText(element, query) {
+        if (!query) {
+          element.innerHTML = element.textContent; // reset
+          return;
+        }
+        const regex = new RegExp(`(${query})`, "gi");
+        element.innerHTML = element.textContent.replace(
+          regex,
+          `<mark class="hl">$1</mark>`
+        );
+      }
+
+      // Search with highlight + category hiding
       function setupSearch() {
         const input = document.getElementById("globalSearch");
         input.addEventListener("input", function () {
           const q = this.value.trim().toLowerCase();
-          const cards = document.querySelectorAll(".cmd");
-          cards.forEach((c) => {
-            const text = c.textContent.toLowerCase();
-            c.style.display = !q || text.includes(q) ? "" : "none";
+          const categories = document.querySelectorAll(".category");
+
+          categories.forEach((cat) => {
+            const cmds = cat.querySelectorAll(".cmd");
+            let matchFound = false;
+
+            cmds.forEach((c) => {
+              const text = c.textContent.toLowerCase();
+              const matched = !q || text.includes(q);
+              c.style.display = matched ? "" : "none";
+
+              // highlight only if visible and query present
+              if (matched && q) {
+                const parts = c.querySelectorAll(".title, pre, .desc, .meta");
+                parts.forEach((el) => highlightText(el, q));
+              } else {
+                const parts = c.querySelectorAll(".title, pre, .desc, .meta");
+                parts.forEach((el) => highlightText(el, ""));
+              }
+
+              if (matched) matchFound = true;
+            });
+
+            cat.style.display = matchFound ? "" : q ? "none" : "";
           });
         });
       }
