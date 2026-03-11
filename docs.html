@@ -163,6 +163,11 @@
         background: #f8f2ff;
       }
 
+      .sidebar a.active {
+        background: #f5ebff;
+        border: 1px solid #e3d3ff;
+      }
+
       .content {
         display: grid;
         gap: 14px;
@@ -2184,20 +2189,86 @@
       const emptyState = document.getElementById("emptyState");
 
       const escapeRegex = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const PRIORITY_ORDER = [
+        "setup",
+        "moderation",
+        "automod",
+        "antinuke",
+        "logging",
+        "ticket",
+        "verification",
+        "roles",
+        "command-toggle",
+        "utility",
+        "help",
+        "info",
+        "confessions",
+        "quests",
+        "economy",
+        "levels",
+        "giveaway",
+        "suggestion",
+        "twitch",
+        "youtube",
+        "kick",
+        "starboard",
+        "counting",
+        "customvc",
+        "boosterrole",
+        "rr",
+        "rt",
+        "birthday",
+        "bremind",
+        "vanity",
+        "stats",
+        "status",
+        "backup",
+        "tz",
+        "roleplay",
+        "fun",
+        "gambling",
+        "marry",
+        "poj",
+        "errors",
+        "donation"
+      ];
+      const priorityMap = new Map(PRIORITY_ORDER.map((id, idx) => [id, idx]));
+      const SORTED_DOCS = DOCS.slice().sort((a, b) => {
+        const ra = priorityMap.has(a.id) ? priorityMap.get(a.id) : 9999;
+        const rb = priorityMap.has(b.id) ? priorityMap.get(b.id) : 9999;
+        if (ra !== rb) return ra - rb;
+        return a.title.localeCompare(b.title);
+      });
+      let selectedCategoryId = SORTED_DOCS.length ? SORTED_DOCS[0].id : null;
+
+      function updateActiveCategoryLink() {
+        Array.from(toc.querySelectorAll("a")).forEach((a) => {
+          a.classList.toggle("active", a.dataset.id === selectedCategoryId);
+        });
+      }
 
       function render() {
         toc.innerHTML = "";
         content.innerHTML = "";
 
-        DOCS.forEach((section) => {
+        SORTED_DOCS.forEach((section) => {
           const link = document.createElement("a");
           link.href = `#${section.id}`;
           link.textContent = section.title.replace(/^[^ ]+\s/, "");
+          link.dataset.id = section.id;
+          link.addEventListener("click", (event) => {
+            event.preventDefault();
+            selectedCategoryId = section.id;
+            input.value = "";
+            applySearch("");
+            updateActiveCategoryLink();
+          });
           toc.appendChild(link);
 
           const card = document.createElement("section");
           card.className = "section";
           card.id = section.id;
+          card.style.display = section.id === selectedCategoryId ? "" : "none";
 
           const h = document.createElement("h2");
           h.textContent = section.title;
@@ -2223,6 +2294,8 @@
           card.appendChild(grid);
           content.appendChild(card);
         });
+
+        updateActiveCategoryLink();
       }
 
       function applySearch(query) {
@@ -2253,8 +2326,14 @@
             }
           });
 
-          section.style.display = sectionVisible ? "" : "none";
-          if (sectionVisible) anyVisible = true;
+          if (q) {
+            section.style.display = sectionVisible ? "" : "none";
+            if (sectionVisible) anyVisible = true;
+          } else {
+            const isSelected = section.id === selectedCategoryId;
+            section.style.display = isSelected ? "" : "none";
+            if (isSelected) anyVisible = true;
+          }
         });
 
         emptyState.style.display = anyVisible ? "none" : "block";
