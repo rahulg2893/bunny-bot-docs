@@ -3,222 +3,498 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bunny Bot</title>
+    <title>Bunny Bot | Discord Utility, Moderation, and Growth</title>
+    <meta
+      name="description"
+      content="Bunny Bot is an all-in-one Discord bot for moderation, automod, tickets, leveling, utility, and community growth."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css"
     />
     <style>
+      :root {
+        --bg: #f8f3ff;
+        --surface: #ffffff;
+        --ink: #2f2342;
+        --muted: #7f6f99;
+        --line: #eadffd;
+        --brand: #f29fd6;
+        --brand-2: #bda4ff;
+        --brand-3: #f3c9ff;
+        --shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+        --radius-lg: 24px;
+        --radius-md: 16px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
       body {
-        font-family: "Segoe UI", Roboto, sans-serif;
         margin: 0;
         padding: 0;
-        background: #f5f6fa;
-        color: #333;
       }
 
-      header {
-        text-align: center;
-        padding: 100px 20px;
-        background: linear-gradient(135deg, #6c63ff, #4a47a3);
-        color: white;
+      body {
+        font-family: "Manrope", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 12% 18%, rgba(242, 159, 214, 0.18) 0, transparent 40%),
+          radial-gradient(circle at 88% 12%, rgba(189, 164, 255, 0.18) 0, transparent 38%),
+          linear-gradient(180deg, #fdf9ff 0%, var(--bg) 100%);
       }
 
-      header h1 {
-        font-size: 3.2rem;
-        margin-bottom: 0.5rem;
-        letter-spacing: 1px;
-      }
-
-      header p {
-        font-size: 1.25rem;
-        margin-bottom: 3rem;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      /* Pill buttons */
-      header .btn-group a {
-        margin: 0 10px;
-        padding: 14px 28px;
-        font-weight: bold;
-        border-radius: 999px;
+      a {
+        color: inherit;
         text-decoration: none;
-        display: inline-block;
-        transition: all 0.25s ease;
       }
 
-      .btn-invite {
-        background: #4caf50;
-        color: white;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-      }
-      .btn-invite:hover {
-        background: #45a049;
-        transform: translateY(-3px);
+      .container {
+        width: min(1120px, 92vw);
+        margin: 0 auto;
       }
 
-      .btn-docs {
-        background: #6c63ff;
-        color: white;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-      }
-      .btn-docs:hover {
-        background: #5b54d6;
-        transform: translateY(-3px);
-      }
-
-      .btn-support {
-        background: #ff4081;
-        color: white;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-      }
-      .btn-support:hover {
-        background: #e73370;
-        transform: translateY(-3px);
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(10px);
+        background: rgba(248, 246, 240, 0.8);
+        border-bottom: 1px solid rgba(26, 23, 20, 0.08);
       }
 
-      .btn-donate {
-        background: #ffb400;
-        color: white;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-      }
-      .btn-donate:hover {
-        background: #e6a200;
-        transform: translateY(-3px);
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
       }
 
-      section {
-        padding: 70px 20px;
-        max-width: 1100px;
-        margin: auto;
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        font-size: 1.1rem;
       }
 
-      section h2 {
-        text-align: center;
-        margin-bottom: 50px;
-        font-size: 2rem;
-        color: #444;
-      }
-
-      .features {
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #f6b6e8, #cdbdff);
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 25px;
+        place-items: center;
+        color: #fff;
+        font-size: 1rem;
+        box-shadow: 0 8px 20px rgba(232, 93, 42, 0.3);
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      nav a {
+        font-weight: 600;
+        color: #4c3d66;
+        padding: 8px 12px;
+        border-radius: 999px;
+      }
+
+      nav a:hover {
+        background: rgba(26, 23, 20, 0.07);
+      }
+
+      .hero {
+        padding: 70px 0 50px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 26px;
+      }
+
+      .hero-panel {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+        padding: 34px;
+        animation: rise 0.7s ease both;
+      }
+
+      .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid #eee3ff;
+        border-radius: 999px;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: var(--muted);
+        padding: 7px 12px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Syne", sans-serif;
+        margin: 0;
+      }
+
+      h1 {
+        margin-top: 16px;
+        font-size: clamp(2rem, 4.2vw, 3.35rem);
+        line-height: 1.04;
+        letter-spacing: -0.02em;
+      }
+
+      .lead {
+        color: var(--muted);
+        font-size: 1.05rem;
+        margin: 16px 0 0;
+        max-width: 58ch;
+        line-height: 1.7;
+      }
+
+      .cta-row {
+        margin-top: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .btn {
+        border: 1px solid transparent;
+        border-radius: 999px;
+        padding: 12px 18px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-primary {
+        background: var(--brand);
+        color: #fff;
+        box-shadow: 0 12px 24px rgba(242, 159, 214, 0.32);
+      }
+
+      .btn-secondary {
+        background: #ffffff;
+        border-color: #d5cdc3;
+      }
+
+      .status-card {
+        background: linear-gradient(160deg, #fff8f4, #fffefb);
+        border: 1px solid #f1e7ff;
+        border-radius: var(--radius-md);
+        padding: 18px;
+      }
+
+      .status-card h3 {
+        font-size: 1.15rem;
+        margin-bottom: 8px;
+      }
+
+      .status-list {
+        display: grid;
+        gap: 8px;
+        color: var(--muted);
+      }
+
+      .status-list strong {
+        color: var(--ink);
+      }
+
+      .stats {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      .stat {
+        background: #ffffff;
+        border: 1px solid #eee3ff;
+        border-radius: 14px;
+        padding: 12px;
+      }
+
+      .stat b {
+        font-family: "Syne", sans-serif;
+        font-size: 1.35rem;
+      }
+
+      .stat span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      .section {
+        padding: 28px 0 58px;
+      }
+
+      .section h2 {
+        font-size: clamp(1.4rem, 2.6vw, 2rem);
+        margin-bottom: 14px;
+      }
+
+      .section p.section-lead {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .feature-grid {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
       }
 
       .feature {
-        background: white;
-        padding: 25px;
-        border-radius: 14px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-        transition: all 0.25s ease;
-        text-align: center;
-      }
-
-      .feature:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 18px;
       }
 
       .feature h3 {
-        margin-bottom: 15px;
-        font-size: 1.3rem;
-        color: #6c63ff;
+        font-size: 1.05rem;
+        margin-bottom: 8px;
+      }
+
+      .feature p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .chip {
+        background: #ffffff;
+        border: 1px solid #e8defb;
+        border-radius: 999px;
+        padding: 10px 14px;
+        font-weight: 700;
+        font-size: 0.9rem;
       }
 
       footer {
-        text-align: center;
-        padding: 40px;
-        background: #2a2a2a;
-        color: #ccc;
+        border-top: 1px solid rgba(26, 23, 20, 0.1);
+        padding: 24px 0 34px;
+        color: var(--muted);
       }
 
-      footer a {
-        color: #6c63ff;
-        text-decoration: none;
-        margin: 0 12px;
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
       }
 
-      footer a:hover {
-        text-decoration: underline;
+      .foot-links {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      @keyframes rise {
+        from {
+          transform: translateY(14px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 960px) {
+        .hero-grid,
+        .feature-grid {
+          grid-template-columns: 1fr;
+        }
+
+        nav {
+          gap: 6px;
+        }
+
+        nav a {
+          font-size: 0.88rem;
+          padding: 7px 10px;
+        }
+      }
+
+      body {
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+      }
+
+      body.page-ready {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      body.page-exit {
+        opacity: 0;
+        transform: translateY(-6px);
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1>🐰 Bunny Bot</h1>
-      <p>
-        Your all-in-one Discord companion — moderation, automod, logging,
-        starboard, bump reminders, and more.
-      </p>
-      <div class="btn-group">
-        <a
-          class="btn-invite"
-          href="https://discord.com/oauth2/authorize?client_id=1411603909793026100&permissions=8&integration_type=0&scope=bot+applications.commands"
-          >➕ Invite Bunny Bot</a
-        >
-        <a class="btn-docs" href="docs.html">📘 Documentation</a>
-        <a class="btn-support" href="https://discord.gg/nUVxJTKpNu"
-          >💬 Support Server</a
-        >
-        <a class="btn-donate" href="https://buymeacoffee.com/bunnybot"
-          >☕ Donate</a
-        >
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">🐰</span>
+          <span>Bunny Bot</span>
+        </a>
+        <nav>
+          <a href="docs.html">Docs</a>
+          <a href="faq.html">FAQ</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="tos.html">ToS</a>
+        </nav>
       </div>
     </header>
 
-    <section>
-      <h2>✨ Features</h2>
-      <div class="features">
-        <div class="feature">
-          <h3>⚒️ Moderation</h3>
-          <p>
-            Kick, ban, jail, mute, and more with easy-to-use commands and logs.
-          </p>
-        </div>
-        <div class="feature">
-          <h3>🛡️ AutoMod & AntiNuke</h3>
-          <p>
-            Protect your server from spam, raids, links, invites, and nukes.
-          </p>
-        </div>
-        <div class="feature">
-          <h3>📊 Stats & Invites</h3>
-          <p>
-            Track server growth, message activity, and user invites with
-            detailed graphs.
-          </p>
-        </div>
-        <div class="feature">
-          <h3>⭐ Starboard</h3>
-          <p>
-            Save your community’s best moments when messages get enough
-            reactions.
-          </p>
-        </div>
-        <div class="feature">
-          <h3>🛠️ Utilities</h3>
-          <p>
-            AFK, bump reminders, ticket system, welcome/goodbye messages, and
-            more.
-          </p>
-        </div>
-      </div>
-    </section>
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <article class="hero-panel">
+            <span class="kicker">Built For Community Servers</span>
+            <h1>One bot for moderation, utility, growth, and engagement.</h1>
+            <p class="lead">
+              Bunny Bot combines trusted moderation tools, anti-raid protection,
+              leveling systems, tickets, reminders, logs, and interaction features
+              in one clean setup.
+            </p>
+            <div class="cta-row">
+              <a
+                class="btn btn-primary"
+                href="https://discord.com/oauth2/authorize?client_id=1411603909793026100&permissions=8&integration_type=0&scope=bot+applications.commands"
+                >Invite Bunny Bot</a
+              >
+              <a class="btn btn-secondary" href="docs.html">Open Documentation</a>
+              <a class="btn btn-secondary" href="https://discord.gg/nUVxJTKpNu"
+                >Support Server</a
+              >
+            </div>
+          </article>
 
-    <section>
-      <h2>🔗 Important Links</h2>
-      <p style="text-align: center">
-        <a href="privacy.html">Privacy Policy</a> •
-        <a href="tos.html">Terms of Service</a> •
-        <a href="faq.html">FAQ</a>
-      </p>
-    </section>
+          <aside class="hero-panel">
+            <div class="status-card">
+              <h3>What You Get</h3>
+              <div class="status-list">
+                <div><strong>Moderation:</strong> Kick, ban, mute, warn, logging</div>
+                <div><strong>Automation:</strong> AutoMod, anti-nuke, reaction tools</div>
+                <div><strong>Utility:</strong> Tickets, reminders, timezone, setup flows</div>
+                <div><strong>Engagement:</strong> Levels, economy, giveaways, games</div>
+              </div>
+            </div>
+            <div class="stats">
+              <div class="stat"><b>40+</b><span>Feature modules</span></div>
+              <div class="stat"><b>24/7</b><span>Production bot runtime</span></div>
+              <div class="stat"><b>1</b><span>Unified command prefix</span></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>Core Areas</h2>
+          <p class="section-lead">
+            A clean command surface for admins, mods, and members.
+          </p>
+          <div class="feature-grid">
+            <article class="feature">
+              <h3>🛡 Moderation & Safety</h3>
+              <p>
+                Real moderation commands, event logs, anti-spam filters, and raid
+                controls to keep your server healthy.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>📈 Activity & Rewards</h3>
+              <p>
+                Leveling, economy, quests, and lightweight game features that
+                reward regular community participation.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>🧰 Utility Stack</h3>
+              <p>
+                Ticket system, reminders, role tools, custom VC workflows,
+                stream notifications, and daily admin conveniences.
+              </p>
+            </article>
+          </div>
+
+          <div class="links">
+            <a class="chip" href="docs.html">View Full Commands</a>
+            <a class="chip" href="faq.html">Read Common Questions</a>
+            <a class="chip" href="privacy.html">Privacy Policy</a>
+            <a class="chip" href="tos.html">Terms of Service</a>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer>
-      <p>© 2025 Bunny Bot. All rights reserved.</p>
+      <div class="container foot">
+        <span>© 2026 Bunny Bot</span>
+        <div class="foot-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="tos.html">Terms</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+      </div>
     </footer>
+    <script>
+      window.addEventListener("pageshow", () => {
+        document.body.classList.add("page-ready");
+      });
+
+      document.querySelectorAll('a[href]').forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const href = link.getAttribute("href");
+          if (!href) return;
+          if (href.startsWith("#")) return;
+          if (href.startsWith("http")) return;
+          if (link.target === "_blank") return;
+
+          event.preventDefault();
+          document.body.classList.remove("page-ready");
+          document.body.classList.add("page-exit");
+          setTimeout(() => {
+            window.location.href = href;
+          }, 220);
+        });
+      });
+    </script>
   </body>
 </html>

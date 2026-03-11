@@ -3,121 +3,128 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bunny Bot — Terms of Service</title>
+    <title>Bunny Bot Terms of Service</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      body {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, sans-serif;
-        margin: 2rem auto;
-        max-width: 900px;
-        line-height: 1.7;
-        padding: 0 1rem;
-        color: #333;
-        background-color: #fafafa;
+      :root { --bg:#f8f3ff; --surface:#ffffff; --ink:#2f2342; --muted:#7f6f99; --line:#eadffd; }
+      *{box-sizing:border-box}
+      body{margin:0;font-family:"Manrope",sans-serif;color:var(--ink);background:linear-gradient(180deg,#fdf9ff 0%,var(--bg) 100%)}
+      .container{width:min(920px,92vw);margin:0 auto}
+      .top{padding:18px 0;display:flex;justify-content:space-between;align-items:center}
+      .brand{font-family:"Syne",sans-serif;font-weight:700;text-decoration:none;color:inherit}
+      .nav{display:flex;gap:10px;flex-wrap:wrap}
+      .nav a{text-decoration:none;color:#2f2923;font-weight:700;font-size:.9rem}
+      .card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px}
+      h1,h2{font-family:"Syne",sans-serif;margin:0}
+      h1{font-size:clamp(1.8rem,3.4vw,2.45rem)}
+      h2{font-size:1.2rem;margin-top:20px}
+      p,li{color:var(--muted);line-height:1.68}
+      ul{padding-left:18px}
+      footer{border-top:1px solid rgba(0,0,0,.1);padding:16px 0 28px;color:var(--muted)}
+      body{
+        opacity:0;
+        transform:translateY(8px);
+        transition:opacity .35s ease,transform .35s ease
       }
-      h1,
-      h2 {
-        color: #4b6cb7;
+      body.page-ready{
+        opacity:1;
+        transform:translateY(0)
       }
-      h1 {
-        border-bottom: 2px solid #4b6cb7;
-        padding-bottom: 0.5rem;
-      }
-      p {
-        margin: 1rem 0;
-      }
-      ul {
-        margin: 1rem 0;
-        padding-left: 1.25rem;
-      }
-      footer {
-        margin-top: 3rem;
-        font-size: 0.9rem;
-        color: #555;
-        border-top: 1px solid #ccc;
-        padding-top: 1rem;
+      body.page-exit{
+        opacity:0;
+        transform:translateY(-6px)
       }
     </style>
   </head>
   <body>
-    <h1>Terms of Service</h1>
-    <p><strong>Effective Date:</strong> September 26, 2025</p>
+    <header class="container top">
+      <a class="brand" href="index.html">🐰 Bunny Bot</a>
+      <nav class="nav">
+        <a href="docs.html">Docs</a>
+        <a href="faq.html">FAQ</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </header>
 
-    <h2>1. Acceptance of Terms</h2>
-    <p>
-      By inviting Bunny Bot (“the Bot”) to your Discord server or otherwise
-      interacting with it, you agree to these Terms of Service and our Privacy
-      Policy. If you do not agree, you may not use the Bot.
-    </p>
+    <main class="container">
+      <article class="card">
+        <h1>Terms of Service</h1>
+        <p><strong>Effective Date:</strong> March 11, 2026</p>
 
-    <h2>2. Eligibility</h2>
-    <p>
-      You must be at least 13 years old, or the minimum age required in your
-      country, to use Discord and therefore to use Bunny Bot. By using the Bot,
-      you confirm that you meet this requirement.
-    </p>
+        <h2>1. Acceptance</h2>
+        <p>
+          By inviting or using Bunny Bot in any Discord server, you agree to these Terms and the Privacy Policy.
+        </p>
 
-    <h2>3. Use of the Bot</h2>
-    <p>You agree to use Bunny Bot in compliance with:</p>
-    <ul>
-      <li>
-        Discord’s
-        <a href="https://discord.com/terms" target="_blank">Terms of Service</a>
-        and
-        <a href="https://discord.com/guidelines" target="_blank"
-          >Community Guidelines</a
-        >
-      </li>
-      <li>All applicable local, national, and international laws</li>
-    </ul>
-    <p>
-      You may not use the Bot for malicious activity, spam, harassment,
-      exploitation, or any unlawful purpose.
-    </p>
+        <h2>2. Eligibility</h2>
+        <p>
+          You must meet Discord’s minimum age and legal eligibility requirements for your region.
+        </p>
 
-    <h2>4. Service Availability</h2>
-    <p>
-      Bunny Bot is provided “as is” and “as available.” We do not guarantee
-      uninterrupted uptime, error-free operation, or compatibility with all
-      servers. Features may change, be removed, or added at any time without
-      prior notice.
-    </p>
+        <h2>3. Responsible Use</h2>
+        <ul>
+          <li>Use Bunny Bot in compliance with Discord Terms and Community Guidelines.</li>
+          <li>Do not use Bunny Bot for harassment, abuse, spam, exploitation, or illegal actions.</li>
+          <li>Server admins are responsible for how bot configuration is applied in their communities.</li>
+        </ul>
 
-    <h2>5. Data Usage</h2>
-    <p>
-      Our data collection practices are described in our
-      <a href="privacy.html">Privacy Policy</a>. By using the Bot, you agree to
-      the handling of your data as outlined there.
-    </p>
+        <h2>4. Availability</h2>
+        <p>
+          Bunny Bot is provided on an “as is” and “as available” basis. Uptime and feature availability are not guaranteed.
+        </p>
 
-    <h2>6. Limitation of Liability</h2>
-    <p>
-      To the fullest extent permitted by law, we are not liable for any damages,
-      losses, or issues arising from your use or inability to use the Bot,
-      including but not limited to data loss, server issues, or moderation
-      decisions.
-    </p>
+        <h2>5. Service Changes</h2>
+        <p>
+          Features, limits, and behavior may be updated, suspended, or removed at any time for maintenance, safety, or compliance.
+        </p>
 
-    <h2>7. Termination</h2>
-    <p>
-      We reserve the right to restrict or terminate your access to Bunny Bot at
-      any time, for any reason, including but not limited to violation of these
-      Terms or Discord’s policies.
-    </p>
+        <h2>6. Limitation of Liability</h2>
+        <p>
+          To the maximum extent allowed by law, Bunny Bot and maintainers are not liable for indirect or consequential losses,
+          including moderation outcomes, server incidents, or data issues resulting from use.
+        </p>
 
-    <h2>8. Changes to Terms</h2>
-    <p>
-      These Terms may be updated from time to time. Material changes will be
-      announced via the support server. Continued use of the Bot after changes
-      are posted constitutes acceptance of the new Terms.
-    </p>
+        <h2>7. Termination</h2>
+        <p>
+          Access may be restricted or terminated for abuse, policy violations, or security concerns.
+        </p>
 
-    <h2>9. Contact</h2>
-    <p>
-      For questions or concerns about these Terms, please contact us via the
-      Bunny Bot support server.
-    </p>
+        <h2>8. Contact</h2>
+        <p>
+          Terms questions: <a href="https://discord.gg/nUVxJTKpNu" target="_blank" rel="noopener noreferrer">Bunny Bot Support Server</a>
+        </p>
+      </article>
+    </main>
 
-    <footer>&copy; 2025 Bunny Bot. All rights reserved.</footer>
+    <footer>
+      <div class="container">© 2026 Bunny Bot</div>
+    </footer>
+    <script>
+      window.addEventListener("pageshow", () => {
+        document.body.classList.add("page-ready");
+      });
+
+      document.querySelectorAll('a[href]').forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const href = link.getAttribute("href");
+          if (!href) return;
+          if (href.startsWith("#")) return;
+          if (href.startsWith("http")) return;
+          if (link.target === "_blank") return;
+
+          event.preventDefault();
+          document.body.classList.remove("page-ready");
+          document.body.classList.add("page-exit");
+          setTimeout(() => {
+            window.location.href = href;
+          }, 220);
+        });
+      });
+    </script>
   </body>
 </html>
