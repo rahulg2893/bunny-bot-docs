@@ -300,337 +300,20 @@
     <script>
       const DOCS = [
         {
-                "id": "ai",
-                "title": "📦 Ai",
-                "note": "Commands extracted from cogs/ai.py",
+                "id": "setup",
+                "title": "⚙️ Setup",
+                "note": "Commands extracted from cogs/setup.py",
                 "commands": [
                         {
-                                "cmd": ",ask",
-                                "desc": "No description provided.",
+                                "cmd": ",setup",
+                                "desc": "Run initial bot setup: creates/fixes mod-logs, logs, jail, Muted and Jailed roles.",
                                 "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",fixgrammar",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",imagine",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",pickup",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",roast",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",summarize",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",translate",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        }
-                ]
-        },
-        {
-                "id": "antinuke",
-                "title": "📦 Antinuke",
-                "note": "Commands extracted from cogs/antinuke.py",
-                "commands": [
-                        {
-                                "cmd": ",an",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command · aliases: antinuke"
-                        },
-                        {
-                                "cmd": ",an defaultpun",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",an denybotjoins",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",an disable",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",an enable",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",an pun",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",an settings",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",an threshold",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",an wl",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        }
-                ]
-        },
-        {
-                "id": "automod",
-                "title": "📦 Automod",
-                "note": "Commands extracted from cogs/automod.py",
-                "commands": [
-                        {
-                                "cmd": ",am",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command · aliases: automod"
-                        },
-                        {
-                                "cmd": ",am action",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",am blacklist",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",am caps",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",am disable",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",am enable",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",am invites",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",am links",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",am massmention",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",am punishment",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",am settings",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",am spam",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",am timeout",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",am wl",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand · aliases: whitelist"
-                        }
-                ]
-        },
-        {
-                "id": "backup",
-                "title": "📦 Backup",
-                "note": "Commands extracted from cogs/backup.py",
-                "commands": [
-                        {
-                                "cmd": ",backup",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command · aliases: bk"
-                        },
-                        {
-                                "cmd": ",backup create",
-                                "desc": "Create a snapshot backup. Optional name can be provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",backup delete",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",backup export",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",backup list",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",backup preview",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",backup restore",
-                                "desc": "Restore a backup (best-effort).",
-                                "perms": "Prefix Subcommand"
-                        }
-                ]
-        },
-        {
-                "id": "birthday",
-                "title": "📦 Birthday",
-                "note": "Commands extracted from cogs/birthday.py",
-                "commands": [
-                        {
-                                "cmd": ",bday",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command · aliases: birthday, bd"
-                        },
-                        {
-                                "cmd": ",bday list",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",bday override",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",bday role",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",bday set",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        }
-                ]
-        },
-        {
-                "id": "boosterrole",
-                "title": "📦 Boosterrole",
-                "note": "Commands extracted from cogs/boosterrole.py",
-                "commands": [
-                        {
-                                "cmd": ",br",
-                                "desc": "Create or update a custom booster role.",
-                                "perms": "Prefix Command · aliases: boosterrole"
-                        },
-                        {
-                                "cmd": ",br award",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",br baserole",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",br cleanup",
-                                "desc": "Delete empty managed roles and remove stale DB rows.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",br color",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",br filter",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",br icon",
-                                "desc": "Set role icon.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",br list",
-                                "desc": "List all managed booster roles in the server.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",br remove",
-                                "desc": "Remove a managed booster role.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",br rename",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",br share",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        }
-                ]
-        },
-        {
-                "id": "bremind",
-                "title": "📦 Bremind",
-                "note": "Commands extracted from cogs/bremind.py",
-                "commands": [
-                        {
-                                "cmd": ",bremind",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",bremind remove",
-                                "desc": "Disable bump reminders.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",bremind set",
-                                "desc": "Set a bump reminder channel.",
-                                "perms": "Prefix Subcommand"
                         }
                 ]
         },
         {
                 "id": "command-toggle",
-                "title": "📦 Command Toggle",
+                "title": "⛔ Command Toggle",
                 "note": "Commands extracted from cogs/command_toggle.py",
                 "commands": [
                         {
@@ -671,82 +354,185 @@
                 ]
         },
         {
-                "id": "confessions",
-                "title": "📦 Confessions",
-                "note": "Commands extracted from cogs/confessions.py",
+                "id": "verification",
+                "title": "✅ Verification",
+                "note": "Commands extracted from cogs/verification.py",
                 "commands": [
                         {
-                                "cmd": ",confess",
-                                "desc": "Submit an anonymous confession in this server.",
+                                "cmd": ",verify",
+                                "desc": "No description provided.",
                                 "perms": "Prefix Command"
                         },
                         {
-                                "cmd": ",confession",
-                                "desc": "Confession system admin/mod commands.",
-                                "perms": "Prefix Command · aliases: confessions"
-                        },
-                        {
-                                "cmd": ",confession approval",
+                                "cmd": ",verify disable",
                                 "desc": "No description provided.",
                                 "perms": "Prefix Subcommand"
                         },
                         {
-                                "cmd": ",confession approve",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",confession deny",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",confession mod",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",confession pending",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",confession set",
+                                "cmd": ",verify enable",
                                 "desc": "No description provided.",
                                 "perms": "Prefix Subcommand"
                         }
                 ]
         },
         {
-                "id": "counting",
-                "title": "📦 Counting",
-                "note": "Commands extracted from cogs/counting.py",
+                "id": "starboard",
+                "title": "⭐ Starboard",
+                "note": "Commands extracted from cogs/starboard.py",
                 "commands": [
                         {
-                                "cmd": ",count",
-                                "desc": "Show current counting channel & number",
+                                "cmd": ",sb",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command · aliases: starboard"
+                        },
+                        {
+                                "cmd": ",sb remove",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",sb set",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",sb status",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",sb top",
+                                "desc": "Show top users by starred posts.",
+                                "perms": "Prefix Subcommand"
+                        }
+                ]
+        },
+        {
+                "id": "tz",
+                "title": "🌍 Timezone",
+                "note": "Commands extracted from cogs/tz.py",
+                "commands": [
+                        {
+                                "cmd": ",tz",
+                                "desc": "Show local time.",
                                 "perms": "Prefix Command"
                         },
                         {
-                                "cmd": ",count clear",
-                                "desc": "Disable counting",
+                                "cmd": ",tz set",
+                                "desc": "Set your timezone by city name (e.g. \"London\" or \"New York, USA\").",
+                                "perms": "Prefix Subcommand"
+                        }
+                ]
+        },
+        {
+                "id": "giveaway",
+                "title": "🎁 Giveaways",
+                "note": "Commands extracted from cogs/giveaway.py",
+                "commands": [
+                        {
+                                "cmd": "/giveaway-cancel",
+                                "desc": "No description provided.",
+                                "perms": "Slash Command"
+                        },
+                        {
+                                "cmd": "/giveaway-edit",
+                                "desc": "No description provided.",
+                                "perms": "Slash Command"
+                        },
+                        {
+                                "cmd": "/giveaway-end",
+                                "desc": "No description provided.",
+                                "perms": "Slash Command"
+                        },
+                        {
+                                "cmd": "/giveaway-reroll",
+                                "desc": "No description provided.",
+                                "perms": "Slash Command"
+                        },
+                        {
+                                "cmd": "/giveaway-start",
+                                "desc": "No description provided.",
+                                "perms": "Slash Command"
+                        }
+                ]
+        },
+        {
+                "id": "birthday",
+                "title": "🎂 Birthday",
+                "note": "Commands extracted from cogs/birthday.py",
+                "commands": [
+                        {
+                                "cmd": ",bday",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command · aliases: birthday, bd"
+                        },
+                        {
+                                "cmd": ",bday list",
+                                "desc": "No description provided.",
                                 "perms": "Prefix Subcommand"
                         },
                         {
-                                "cmd": ",count reset",
-                                "desc": "Reset the counter back to 0",
+                                "cmd": ",bday override",
+                                "desc": "No description provided.",
                                 "perms": "Prefix Subcommand"
                         },
                         {
-                                "cmd": ",count set",
-                                "desc": "Set the counting channel",
+                                "cmd": ",bday role",
+                                "desc": "No description provided.",
                                 "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",bday set",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        }
+                ]
+        },
+        {
+                "id": "fun",
+                "title": "🎉 Fun",
+                "note": "Commands extracted from cogs/fun.py",
+                "commands": [
+                        {
+                                "cmd": ",games",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",guess",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",guess start",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",guess stop",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",rps",
+                                "desc": "Challenge someone to Rock-Paper-Scissors: ,rps @user",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",tictactoe",
+                                "desc": "Start a Tic-Tac-Toe challenge: ,tictactoe @user",
+                                "perms": "Prefix Command · aliases: ttt"
+                        },
+                        {
+                                "cmd": ",ttt_lb",
+                                "desc": "Show Tic-Tac-Toe leaderboard for this guild (top 10 by wins).",
+                                "perms": "Prefix Command · aliases: ttt_leaderboard, ttt_leaders"
                         }
                 ]
         },
         {
                 "id": "customvc",
-                "title": "📦 Customvc",
+                "title": "🎙 Custom VC",
                 "note": "Commands extracted from cogs/customvc.py",
                 "commands": [
                         {
@@ -807,713 +593,122 @@
                 ]
         },
         {
-                "id": "dev",
-                "title": "📦 Dev",
-                "note": "Commands extracted from cogs/dev.py",
+                "id": "ticket",
+                "title": "🎟 Tickets",
+                "note": "Commands extracted from cogs/ticket.py",
                 "commands": [
                         {
-                                "cmd": ",guilds",
-                                "desc": "Lists all guilds the bot is in with name, ID, and member count (owner only).",
-                                "perms": "Prefix Command"
-                        }
-                ]
-        },
-        {
-                "id": "donation",
-                "title": "📦 Donation",
-                "note": "Commands extracted from cogs/donation.py",
-                "commands": [
-                        {
-                                "cmd": ",donate",
-                                "desc": "Show donation and support link",
-                                "perms": "Prefix Command · aliases: support"
-                        }
-                ]
-        },
-        {
-                "id": "economy",
-                "title": "📦 Economy",
-                "note": "Commands extracted from cogs/economy.py",
-                "commands": [
-                        {
-                                "cmd": ",addmoney",
-                                "desc": "Admin: add money to user's wallet.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",balance",
-                                "desc": "Show wallet/bank/total.",
-                                "perms": "Prefix Command · aliases: bal"
-                        },
-                        {
-                                "cmd": ",buy",
-                                "desc": "Buy an item from the shop.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",crime",
-                                "desc": "Risky command: chance to earn a lot or lose money. 60s cooldown.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",daily",
-                                "desc": "24h cooldown, random reward 1000–2000.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",deposit",
-                                "desc": "Deposit from wallet to bank.",
-                                "perms": "Prefix Command · aliases: dep"
-                        },
-                        {
-                                "cmd": ",inventory",
-                                "desc": "Show inventory for a user.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",job",
-                                "desc": "Choose a job from 3 randomized options. 30s cooldown per user.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",removemoney",
-                                "desc": "Admin: remove money from user's wallet.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",resetbal",
-                                "desc": "Admin: reset a user's wallet and bank to 0 and clear inventory.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",rob",
-                                "desc": "Try to rob someone (chance to fail).",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",sell",
-                                "desc": "Sell an item (half buy price).",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",setbal",
-                                "desc": "Admin: set user's wallet (and create wallet row).",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",shop",
-                                "desc": "List shop items (paginated).",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",shopadd",
-                                "desc": "Admin: add or update shop item.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",shopremove",
-                                "desc": "Admin: remove an item from the shop.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",transfer",
-                                "desc": "Transfer from your wallet to another user's wallet.",
-                                "perms": "Prefix Command · aliases: pay, give"
-                        },
-                        {
-                                "cmd": ",use",
-                                "desc": "Use a consumable item (rich effects).",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",withdraw",
-                                "desc": "Withdraw from bank to wallet.",
-                                "perms": "Prefix Command · aliases: with"
-                        },
-                        {
-                                "cmd": ",work",
-                                "desc": "2h cooldown, random reward 250–1000 (affected by work_boost buff when present).",
-                                "perms": "Prefix Command"
-                        }
-                ]
-        },
-        {
-                "id": "fun",
-                "title": "📦 Fun",
-                "note": "Commands extracted from cogs/fun.py",
-                "commands": [
-                        {
-                                "cmd": ",games",
+                                "cmd": ",ticket",
                                 "desc": "No description provided.",
                                 "perms": "Prefix Command"
                         },
                         {
-                                "cmd": ",guess",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",guess start",
-                                "desc": "No description provided.",
+                                "cmd": ",ticket add",
+                                "desc": "Add a user to a ticket (staff only).",
                                 "perms": "Prefix Subcommand"
                         },
                         {
-                                "cmd": ",guess stop",
-                                "desc": "No description provided.",
+                                "cmd": ",ticket claim",
+                                "desc": "Claim a ticket (staff only). Optionally pass channel mention or ticket number.",
                                 "perms": "Prefix Subcommand"
                         },
                         {
-                                "cmd": ",rps",
-                                "desc": "Challenge someone to Rock-Paper-Scissors: ,rps @user",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",tictactoe",
-                                "desc": "Start a Tic-Tac-Toe challenge: ,tictactoe @user",
-                                "perms": "Prefix Command · aliases: ttt"
-                        },
-                        {
-                                "cmd": ",ttt_lb",
-                                "desc": "Show Tic-Tac-Toe leaderboard for this guild (top 10 by wins).",
-                                "perms": "Prefix Command · aliases: ttt_leaderboard, ttt_leaders"
-                        }
-                ]
-        },
-        {
-                "id": "gambling",
-                "title": "📦 Gambling",
-                "note": "Commands extracted from cogs/gambling.py",
-                "commands": [
-                        {
-                                "cmd": ",blackjack",
-                                "desc": "Play Blackjack vs dealer.",
-                                "perms": "Prefix Command · aliases: bj"
-                        },
-                        {
-                                "cmd": ",coinflip",
-                                "desc": "Coinflip. Guess heads/tails. Win 2x on correct guess.",
-                                "perms": "Prefix Command · aliases: cf"
-                        },
-                        {
-                                "cmd": ",dice",
-                                "desc": "Roll a dice. 6 = win 3x, otherwise lose the bet.",
-                                "perms": "Prefix Command · aliases: dicegame"
-                        }
-                ]
-        },
-        {
-                "id": "giveaway",
-                "title": "📦 Giveaway",
-                "note": "Commands extracted from cogs/giveaway.py",
-                "commands": [
-                        {
-                                "cmd": "/giveaway-cancel",
-                                "desc": "No description provided.",
-                                "perms": "Slash Command"
-                        },
-                        {
-                                "cmd": "/giveaway-edit",
-                                "desc": "No description provided.",
-                                "perms": "Slash Command"
-                        },
-                        {
-                                "cmd": "/giveaway-end",
-                                "desc": "No description provided.",
-                                "perms": "Slash Command"
-                        },
-                        {
-                                "cmd": "/giveaway-reroll",
-                                "desc": "No description provided.",
-                                "perms": "Slash Command"
-                        },
-                        {
-                                "cmd": "/giveaway-start",
-                                "desc": "No description provided.",
-                                "perms": "Slash Command"
-                        }
-                ]
-        },
-        {
-                "id": "help",
-                "title": "📦 Help",
-                "note": "Commands extracted from cogs/help.py",
-                "commands": [
-                        {
-                                "cmd": ",help",
-                                "desc": "Send a simple help embed with the docs and support links.",
-                                "perms": "Prefix Command"
-                        }
-                ]
-        },
-        {
-                "id": "info",
-                "title": "📦 Info",
-                "note": "Commands extracted from cogs/info.py",
-                "commands": [
-                        {
-                                "cmd": ",anime",
-                                "desc": "Search MyAnimeList (via Jikan) for an anime and show poster, synopsis, genres, producers and top characters.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",book",
-                                "desc": "Search Google Books for a book and show cover, authors, published date, and description.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",game",
-                                "desc": "Search RAWG for a video game and display cover, platforms, genres, developers, release date and short description.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",manga",
-                                "desc": "Search MyAnimeList (via Jikan) for a manga and show cover, synopsis, authors, and publishers.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",movie",
-                                "desc": "Search TMDB for a movie and display poster, overview, release date and cast.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",tv",
-                                "desc": "Search TMDB for a TV show and display poster, overview, first air date and cast.",
-                                "perms": "Prefix Command"
-                        }
-                ]
-        },
-        {
-                "id": "kick",
-                "title": "📦 Kick",
-                "note": "Commands extracted from cogs/kick.py",
-                "commands": [
-                        {
-                                "cmd": ",k",
-                                "desc": "Main Kick group: add/remove/list",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",k add",
-                                "desc": "Add a Kick streamer to announce in a channel.",
+                                "cmd": ",ticket close",
+                                "desc": "Close a ticket (staff only). Reason is mandatory. Channel is archived and scheduled for deletion.",
                                 "perms": "Prefix Subcommand"
                         },
                         {
-                                "cmd": ",k list",
-                                "desc": "List configured Kick streamers for this guild.",
+                                "cmd": ",ticket open",
+                                "desc": "Open a ticket. Reason is mandatory.",
                                 "perms": "Prefix Subcommand"
                         },
                         {
-                                "cmd": ",k remove",
-                                "desc": "Remove a Kick streamer from announcements.",
+                                "cmd": ",ticket remove",
+                                "desc": "Remove a user's access from a ticket (staff only).",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",ticket reopen",
+                                "desc": "Re-open an archived/closed ticket (staff only). Cancels scheduled deletion and unlocks the channel.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",ticket setdelete",
+                                "desc": "Set auto-delete delay for archived tickets. Use seconds or 'never'.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",ticket setup",
+                                "desc": "Setup ticket system:",
                                 "perms": "Prefix Subcommand"
                         }
                 ]
         },
         {
-                "id": "levels",
-                "title": "📦 Levels",
-                "note": "Commands extracted from cogs/levels.py",
+                "id": "boosterrole",
+                "title": "🎨 Booster Role",
+                "note": "Commands extracted from cogs/boosterrole.py",
                 "commands": [
                         {
-                                "cmd": ",clearlevelchannel",
-                                "desc": "Disable the custom level-up channel (announcements disabled).",
-                                "perms": "Prefix Command · aliases: clearlvlch, disablelevelchannel, disablelvlch"
+                                "cmd": ",br",
+                                "desc": "Create or update a custom booster role.",
+                                "perms": "Prefix Command · aliases: boosterrole"
                         },
                         {
-                                "cmd": ",leaderboard",
-                                "desc": "Server XP Leaderboard (Top 10) with progress bars.",
-                                "perms": "Prefix Command · aliases: lb, top"
-                        },
-                        {
-                                "cmd": ",level",
-                                "desc": "Show your (or another user's) level and XP with progress bar.",
-                                "perms": "Prefix Command · aliases: rank"
-                        },
-                        {
-                                "cmd": ",linkrole",
-                                "desc": "Link a role to a level (auto-assign when user reaches that level).",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",linkroles",
-                                "desc": "List all level→role links.",
-                                "perms": "Prefix Command · aliases: listlinkroles, links"
-                        },
-                        {
-                                "cmd": ",multipliers",
-                                "desc": "List all configured role multipliers.",
-                                "perms": "Prefix Command · aliases: multis, listmultipliers"
-                        },
-                        {
-                                "cmd": ",removelinkrole",
-                                "desc": "Remove the linked role for a specific level.",
-                                "perms": "Prefix Command · aliases: unlinkrole"
-                        },
-                        {
-                                "cmd": ",resetall",
-                                "desc": "Reset ALL users' XP and levels in this server.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",resetxp",
-                                "desc": "Reset a member's XP (keeps current level).",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",setlevel",
-                                "desc": "Set a member's level.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",setlevelchannel",
-                                "desc": "Set or view the level-up announcement channel.",
-                                "perms": "Prefix Command · aliases: setlevelch, setlvlch, levelchannel"
-                        },
-                        {
-                                "cmd": ",setxp",
-                                "desc": "Set a member's XP.",
-                                "perms": "Prefix Command"
-                        }
-                ]
-        },
-        {
-                "id": "marry",
-                "title": "📦 Marry",
-                "note": "Commands extracted from cogs/marry.py",
-                "commands": [
-                        {
-                                "cmd": ",adopt",
-                                "desc": ",adopt <user> → propose adoption (child must Accept/Decline via buttons).",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",disown",
-                                "desc": ",disown <user> → opens confirm/cancel buttons to remove your parental link to a child.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",divorce",
-                                "desc": ",divorce → opens a confirm/cancel button view to divorce your spouse.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",family",
-                                "desc": ",family [user]",
-                                "perms": "Prefix Command · aliases: familytree, familyimg, ftree"
-                        },
-                        {
-                                "cmd": ",marry",
-                                "desc": ",marry <user> → creates a proposal that the target can accept with buttons.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",marry_reset",
-                                "desc": "BOT OWNER ONLY.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",run",
-                                "desc": ",run <parent> → child leaves a parent.",
-                                "perms": "Prefix Command"
-                        }
-                ]
-        },
-        {
-                "id": "moderation",
-                "title": "📦 Moderation",
-                "note": "Commands extracted from cogs/moderation.py",
-                "commands": [
-                        {
-                                "cmd": ",ban",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",clearwarns",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",fp",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",fp add",
+                                "cmd": ",br award",
                                 "desc": "No description provided.",
                                 "perms": "Prefix Subcommand"
                         },
                         {
-                                "cmd": ",fp list",
+                                "cmd": ",br baserole",
                                 "desc": "No description provided.",
                                 "perms": "Prefix Subcommand"
                         },
                         {
-                                "cmd": ",fp listall",
+                                "cmd": ",br cleanup",
+                                "desc": "Delete empty managed roles and remove stale DB rows.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",br color",
                                 "desc": "No description provided.",
                                 "perms": "Prefix Subcommand"
                         },
                         {
-                                "cmd": ",fp remove",
+                                "cmd": ",br filter",
                                 "desc": "No description provided.",
                                 "perms": "Prefix Subcommand"
                         },
                         {
-                                "cmd": ",fp reset",
+                                "cmd": ",br icon",
+                                "desc": "Set role icon.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",br list",
+                                "desc": "List all managed booster roles in the server.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",br remove",
+                                "desc": "Remove a managed booster role.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",br rename",
                                 "desc": "No description provided.",
                                 "perms": "Prefix Subcommand"
                         },
                         {
-                                "cmd": ",jail",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",kick",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",lock",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",lockall",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",purge",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",purgeemojis",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",purgeimages",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",purgelinks",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",purgestickers",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",removetimeout",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command · aliases: untimeout"
-                        },
-                        {
-                                "cmd": ",removewarn",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command · aliases: delwarn"
-                        },
-                        {
-                                "cmd": ",resetmoderation",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",roleadd",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",roleremove",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",slowmodeoff",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",slowmodeon",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",timeout",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",timeoutlist",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command · aliases: tlist"
-                        },
-                        {
-                                "cmd": ",tl",
-                                "desc": "Lock the specified thread (or current thread if run inside one).",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",tlall",
-                                "desc": "Lock all active threads in the server.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",tul",
-                                "desc": "Unlock the specified thread (or current thread if run inside one).",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",tulall",
-                                "desc": "Unlock all active threads in the server.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",unban",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",unjail",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",unlock",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",unlockall",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",warn",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",warnings",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command · aliases: warns"
-                        }
-                ]
-        },
-        {
-                "id": "music",
-                "title": "📦 Music",
-                "note": "Commands extracted from cogs/music.py",
-                "commands": [
-                        {
-                                "cmd": ",now_playing",
-                                "desc": "Show current song.",
-                                "perms": "Prefix Command · aliases: np, nowplaying, current"
-                        },
-                        {
-                                "cmd": ",pause",
-                                "desc": "Pause playback.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",play",
-                                "desc": "Play music from YouTube.",
-                                "perms": "Prefix Command · aliases: p"
-                        },
-                        {
-                                "cmd": ",queue",
-                                "desc": "Show the current queue.",
-                                "perms": "Prefix Command · aliases: q"
-                        },
-                        {
-                                "cmd": ",resume",
-                                "desc": "Resume playback.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",skip",
-                                "desc": "Skip current song.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",stop",
-                                "desc": "Stop playback and disconnect.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",volume",
-                                "desc": "Set or check volume (0-100).",
-                                "perms": "Prefix Command · aliases: vol"
-                        }
-                ]
-        },
-        {
-                "id": "poj",
-                "title": "📦 Poj",
-                "note": "Commands extracted from cogs/poj.py",
-                "commands": [
-                        {
-                                "cmd": ",poj",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",poj add",
+                                "cmd": ",br share",
                                 "desc": "No description provided.",
                                 "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",poj clear",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",poj list",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",poj remove",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        }
-                ]
-        },
-        {
-                "id": "quests",
-                "title": "📦 Quests",
-                "note": "Commands extracted from cogs/quests.py",
-                "commands": [
-                        {
-                                "cmd": ",quests",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command · aliases: quest"
-                        },
-                        {
-                                "cmd": ",quests claim",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",quests listall",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",quests status",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand · aliases: list, start"
                         }
                 ]
         },
         {
                 "id": "roleplay",
-                "title": "📦 Roleplay",
+                "title": "🎭 Roleplay",
                 "note": "Commands extracted from cogs/roleplay.py",
                 "commands": [
                         {
@@ -1729,8 +924,974 @@
                 ]
         },
         {
+                "id": "gambling",
+                "title": "🎲 Gambling",
+                "note": "Commands extracted from cogs/gambling.py",
+                "commands": [
+                        {
+                                "cmd": ",blackjack",
+                                "desc": "Play Blackjack vs dealer.",
+                                "perms": "Prefix Command · aliases: bj"
+                        },
+                        {
+                                "cmd": ",coinflip",
+                                "desc": "Coinflip. Guess heads/tails. Win 2x on correct guess.",
+                                "perms": "Prefix Command · aliases: cf"
+                        },
+                        {
+                                "cmd": ",dice",
+                                "desc": "Roll a dice. 6 = win 3x, otherwise lose the bet.",
+                                "perms": "Prefix Command · aliases: dicegame"
+                        }
+                ]
+        },
+        {
+                "id": "marry",
+                "title": "💍 Marriage",
+                "note": "Commands extracted from cogs/marry.py",
+                "commands": [
+                        {
+                                "cmd": ",adopt",
+                                "desc": ",adopt <user> → propose adoption (child must Accept/Decline via buttons).",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",disown",
+                                "desc": ",disown <user> → opens confirm/cancel buttons to remove your parental link to a child.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",divorce",
+                                "desc": ",divorce → opens a confirm/cancel button view to divorce your spouse.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",family",
+                                "desc": ",family [user]",
+                                "perms": "Prefix Command · aliases: familytree, familyimg, ftree"
+                        },
+                        {
+                                "cmd": ",marry",
+                                "desc": ",marry <user> → creates a proposal that the target can accept with buttons.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",marry_reset",
+                                "desc": "BOT OWNER ONLY.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",run",
+                                "desc": ",run <parent> → child leaves a parent.",
+                                "perms": "Prefix Command"
+                        }
+                ]
+        },
+        {
+                "id": "donation",
+                "title": "💖 Donation",
+                "note": "Commands extracted from cogs/donation.py",
+                "commands": [
+                        {
+                                "cmd": ",donate",
+                                "desc": "Show donation and support link",
+                                "perms": "Prefix Command · aliases: support"
+                        }
+                ]
+        },
+        {
+                "id": "suggestion",
+                "title": "💡 Suggestions",
+                "note": "Commands extracted from cogs/suggestion.py",
+                "commands": [
+                        {
+                                "cmd": ",suggest",
+                                "desc": "Submit a suggestion for Bunny Bot.",
+                                "perms": "Prefix Command"
+                        }
+                ]
+        },
+        {
+                "id": "economy",
+                "title": "💰 Economy",
+                "note": "Commands extracted from cogs/economy.py",
+                "commands": [
+                        {
+                                "cmd": ",addmoney",
+                                "desc": "Admin: add money to user's wallet.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",balance",
+                                "desc": "Show wallet/bank/total.",
+                                "perms": "Prefix Command · aliases: bal"
+                        },
+                        {
+                                "cmd": ",buy",
+                                "desc": "Buy an item from the shop.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",crime",
+                                "desc": "Risky command: chance to earn a lot or lose money. 60s cooldown.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",daily",
+                                "desc": "24h cooldown, random reward 1000–2000.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",deposit",
+                                "desc": "Deposit from wallet to bank.",
+                                "perms": "Prefix Command · aliases: dep"
+                        },
+                        {
+                                "cmd": ",inventory",
+                                "desc": "Show inventory for a user.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",job",
+                                "desc": "Choose a job from 3 randomized options. 30s cooldown per user.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",removemoney",
+                                "desc": "Admin: remove money from user's wallet.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",resetbal",
+                                "desc": "Admin: reset a user's wallet and bank to 0 and clear inventory.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",rob",
+                                "desc": "Try to rob someone (chance to fail).",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",sell",
+                                "desc": "Sell an item (half buy price).",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",setbal",
+                                "desc": "Admin: set user's wallet (and create wallet row).",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",shop",
+                                "desc": "List shop items (paginated).",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",shopadd",
+                                "desc": "Admin: add or update shop item.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",shopremove",
+                                "desc": "Admin: remove an item from the shop.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",transfer",
+                                "desc": "Transfer from your wallet to another user's wallet.",
+                                "perms": "Prefix Command · aliases: pay, give"
+                        },
+                        {
+                                "cmd": ",use",
+                                "desc": "Use a consumable item (rich effects).",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",withdraw",
+                                "desc": "Withdraw from bank to wallet.",
+                                "perms": "Prefix Command · aliases: with"
+                        },
+                        {
+                                "cmd": ",work",
+                                "desc": "2h cooldown, random reward 250–1000 (affected by work_boost buff when present).",
+                                "perms": "Prefix Command"
+                        }
+                ]
+        },
+        {
+                "id": "backup",
+                "title": "💾 Backup",
+                "note": "Commands extracted from cogs/backup.py",
+                "commands": [
+                        {
+                                "cmd": ",backup",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command · aliases: bk"
+                        },
+                        {
+                                "cmd": ",backup create",
+                                "desc": "Create a snapshot backup. Optional name can be provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",backup delete",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",backup export",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",backup list",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",backup preview",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",backup restore",
+                                "desc": "Restore a backup (best-effort).",
+                                "perms": "Prefix Subcommand"
+                        }
+                ]
+        },
+        {
+                "id": "levels",
+                "title": "📈 Levels",
+                "note": "Commands extracted from cogs/levels.py",
+                "commands": [
+                        {
+                                "cmd": ",clearlevelchannel",
+                                "desc": "Disable the custom level-up channel (announcements disabled).",
+                                "perms": "Prefix Command · aliases: clearlvlch, disablelevelchannel, disablelvlch"
+                        },
+                        {
+                                "cmd": ",leaderboard",
+                                "desc": "Server XP Leaderboard (Top 10) with progress bars.",
+                                "perms": "Prefix Command · aliases: lb, top"
+                        },
+                        {
+                                "cmd": ",level",
+                                "desc": "Show your (or another user's) level and XP with progress bar.",
+                                "perms": "Prefix Command · aliases: rank"
+                        },
+                        {
+                                "cmd": ",linkrole",
+                                "desc": "Link a role to a level (auto-assign when user reaches that level).",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",linkroles",
+                                "desc": "List all level→role links.",
+                                "perms": "Prefix Command · aliases: listlinkroles, links"
+                        },
+                        {
+                                "cmd": ",multipliers",
+                                "desc": "List all configured role multipliers.",
+                                "perms": "Prefix Command · aliases: multis, listmultipliers"
+                        },
+                        {
+                                "cmd": ",removelinkrole",
+                                "desc": "Remove the linked role for a specific level.",
+                                "perms": "Prefix Command · aliases: unlinkrole"
+                        },
+                        {
+                                "cmd": ",resetall",
+                                "desc": "Reset ALL users' XP and levels in this server.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",resetxp",
+                                "desc": "Reset a member's XP (keeps current level).",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",setlevel",
+                                "desc": "Set a member's level.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",setlevelchannel",
+                                "desc": "Set or view the level-up announcement channel.",
+                                "perms": "Prefix Command · aliases: setlevelch, setlvlch, levelchannel"
+                        },
+                        {
+                                "cmd": ",setxp",
+                                "desc": "Set a member's XP.",
+                                "perms": "Prefix Command"
+                        }
+                ]
+        },
+        {
+                "id": "stats",
+                "title": "📊 Stats",
+                "note": "Commands extracted from cogs/stats.py",
+                "commands": [
+                        {
+                                "cmd": ",inv",
+                                "desc": "Show invite stats for yourself or another member.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",inv reset",
+                                "desc": "Reset invites for all users or a specific member.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",inv top",
+                                "desc": "Show top inviters leaderboard.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",mstats",
+                                "desc": "Show member join/leave graph for last 30 days.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",stats",
+                                "desc": "Show today's stats + 7-day summary.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",stats week",
+                                "desc": "Show last 7 days breakdown with graph.",
+                                "perms": "Prefix Subcommand"
+                        }
+                ]
+        },
+        {
+                "id": "help",
+                "title": "📘 Help",
+                "note": "Commands extracted from cogs/help.py",
+                "commands": [
+                        {
+                                "cmd": ",help",
+                                "desc": "Show general help or details for a specific command.",
+                                "perms": "Prefix Command"
+                        }
+                ]
+        },
+        {
+                "id": "quests",
+                "title": "📜 Quests",
+                "note": "Commands extracted from cogs/quests.py",
+                "commands": [
+                        {
+                                "cmd": ",quests",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command · aliases: quest"
+                        },
+                        {
+                                "cmd": ",quests claim",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",quests listall",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",quests status",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand · aliases: list, start"
+                        }
+                ]
+        },
+        {
+                "id": "youtube",
+                "title": "📢 YouTube",
+                "note": "Commands extracted from cogs/youtube.py",
+                "commands": [
+                        {
+                                "cmd": ",youtube",
+                                "desc": "Main youtube group: add/remove/list",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",youtube add",
+                                "desc": "Add a YouTube channel to announce when it goes live.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",youtube list",
+                                "desc": "List configured YouTube channels for this guild.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",youtube remove",
+                                "desc": "Remove a YouTube channel from announcements.",
+                                "perms": "Prefix Subcommand"
+                        }
+                ]
+        },
+        {
+                "id": "twitch",
+                "title": "📺 Twitch",
+                "note": "Commands extracted from cogs/twitch.py",
+                "commands": [
+                        {
+                                "cmd": ",twitch",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",twitch add",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",twitch list",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",twitch remove",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        }
+                ]
+        },
+        {
+                "id": "info",
+                "title": "🔎 Information",
+                "note": "Commands extracted from cogs/info.py",
+                "commands": [
+                        {
+                                "cmd": ",anime",
+                                "desc": "Search MyAnimeList (via Jikan) for an anime and show poster, synopsis, genres, producers and top characters.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",book",
+                                "desc": "Search Google Books for a book and show cover, authors, published date, and description.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",game",
+                                "desc": "Search RAWG for a video game and display cover, platforms, genres, developers, release date and short description.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",manga",
+                                "desc": "Search MyAnimeList (via Jikan) for a manga and show cover, synopsis, authors, and publishers.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",movie",
+                                "desc": "Search TMDB for a movie and display poster, overview, release date and cast.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",tv",
+                                "desc": "Search TMDB for a TV show and display poster, overview, first air date and cast.",
+                                "perms": "Prefix Command"
+                        }
+                ]
+        },
+        {
+                "id": "bremind",
+                "title": "🔔 Bump Reminder",
+                "note": "Commands extracted from cogs/bremind.py",
+                "commands": [
+                        {
+                                "cmd": ",bremind",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",bremind remove",
+                                "desc": "Disable bump reminders.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",bremind set",
+                                "desc": "Set a bump reminder channel.",
+                                "perms": "Prefix Subcommand"
+                        }
+                ]
+        },
+        {
+                "id": "vanity",
+                "title": "🔗 Vanity",
+                "note": "Commands extracted from cogs/vanity.py",
+                "commands": [
+                        {
+                                "cmd": ",vanity",
+                                "desc": "Show current vanity settings for this guild.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",vanity clear",
+                                "desc": "Clear vanity configuration (server owner only).",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",vanity set",
+                                "desc": "Set vanity system (server owner only).",
+                                "perms": "Prefix Subcommand"
+                        }
+                ]
+        },
+        {
+                "id": "counting",
+                "title": "🔢 Counting",
+                "note": "Commands extracted from cogs/counting.py",
+                "commands": [
+                        {
+                                "cmd": ",count",
+                                "desc": "Show current counting channel & number",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",count clear",
+                                "desc": "Disable counting",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",count reset",
+                                "desc": "Reset the counter back to 0",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",count set",
+                                "desc": "Set the counting channel",
+                                "perms": "Prefix Subcommand"
+                        }
+                ]
+        },
+        {
+                "id": "moderation",
+                "title": "🔨 Moderation",
+                "note": "Commands extracted from cogs/moderation.py",
+                "commands": [
+                        {
+                                "cmd": ",ban",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",clearwarns",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",fp",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",fp add",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",fp list",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",fp listall",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",fp remove",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",fp reset",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",jail",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",kick",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",lock",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",lockall",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",purge",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",purgeemojis",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",purgeimages",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",purgelinks",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",purgestickers",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",removetimeout",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command · aliases: untimeout"
+                        },
+                        {
+                                "cmd": ",removewarn",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command · aliases: delwarn"
+                        },
+                        {
+                                "cmd": ",resetmoderation",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",roleadd",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",roleremove",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",slowmodeoff",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",slowmodeon",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",timeout",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",timeoutlist",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command · aliases: tlist"
+                        },
+                        {
+                                "cmd": ",tl",
+                                "desc": "Lock the specified thread (or current thread if run inside one).",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",tlall",
+                                "desc": "Lock all active threads in the server.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",tul",
+                                "desc": "Unlock the specified thread (or current thread if run inside one).",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",tulall",
+                                "desc": "Unlock all active threads in the server.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",unban",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",unjail",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",unlock",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",unlockall",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",warn",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",warnings",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command · aliases: warns"
+                        }
+                ]
+        },
+        {
+                "id": "confessions",
+                "title": "🕊 Confessions",
+                "note": "Commands extracted from cogs/confessions.py",
+                "commands": [
+                        {
+                                "cmd": ",confess",
+                                "desc": "Submit an anonymous confession in this server.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",confession",
+                                "desc": "Confession system admin/mod commands.",
+                                "perms": "Prefix Command · aliases: confessions"
+                        },
+                        {
+                                "cmd": ",confession approval",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",confession approve",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",confession deny",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",confession mod",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",confession pending",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",confession set",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        }
+                ]
+        },
+        {
+                "id": "rr",
+                "title": "🙂 Reaction Roles",
+                "note": "Commands extracted from cogs/rr.py",
+                "commands": [
+                        {
+                                "cmd": ",rr",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",rr add",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",rr list",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",rr remove",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        }
+                ]
+        },
+        {
+                "id": "automod",
+                "title": "🛡 AutoMod",
+                "note": "Commands extracted from cogs/automod.py",
+                "commands": [
+                        {
+                                "cmd": ",am",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command · aliases: automod"
+                        },
+                        {
+                                "cmd": ",am action",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",am blacklist",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",am caps",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",am disable",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",am enable",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",am invites",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",am links",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",am massmention",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",am punishment",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",am settings",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",am spam",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",am timeout",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",am wl",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand · aliases: whitelist"
+                        }
+                ]
+        },
+        {
+                "id": "rt",
+                "title": "🤖 Reaction Text",
+                "note": "Commands extracted from cogs/rt.py",
+                "commands": [
+                        {
+                                "cmd": ",rt",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",rt add",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",rt list",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",rt remove",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        }
+                ]
+        },
+        {
+                "id": "kick",
+                "title": "🥊 Kick Alerts",
+                "note": "Commands extracted from cogs/kick.py",
+                "commands": [
+                        {
+                                "cmd": ",k",
+                                "desc": "Main Kick group: add/remove/list",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",k add",
+                                "desc": "Add a Kick streamer to announce in a channel.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",k list",
+                                "desc": "List configured Kick streamers for this guild.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",k remove",
+                                "desc": "Remove a Kick streamer from announcements.",
+                                "perms": "Prefix Subcommand"
+                        }
+                ]
+        },
+        {
+                "id": "poj",
+                "title": "🧩 Poj",
+                "note": "Commands extracted from cogs/poj.py",
+                "commands": [
+                        {
+                                "cmd": ",poj",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Command"
+                        },
+                        {
+                                "cmd": ",poj add",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",poj clear",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",poj list",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",poj remove",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        }
+                ]
+        },
+        {
                 "id": "roles",
-                "title": "📦 Roles",
+                "title": "🧩 Roles",
                 "note": "Commands extracted from cogs/roles.py",
                 "commands": [
                         {
@@ -1791,251 +1952,8 @@
                 ]
         },
         {
-                "id": "rr",
-                "title": "📦 Rr",
-                "note": "Commands extracted from cogs/rr.py",
-                "commands": [
-                        {
-                                "cmd": ",rr",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",rr add",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",rr list",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",rr remove",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        }
-                ]
-        },
-        {
-                "id": "rt",
-                "title": "📦 Rt",
-                "note": "Commands extracted from cogs/rt.py",
-                "commands": [
-                        {
-                                "cmd": ",rt",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",rt add",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",rt list",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",rt remove",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        }
-                ]
-        },
-        {
-                "id": "setup",
-                "title": "📦 Setup",
-                "note": "Commands extracted from cogs/setup.py",
-                "commands": [
-                        {
-                                "cmd": ",setup",
-                                "desc": "Run initial bot setup: creates/fixes mod-logs, logs, jail, Muted and Jailed roles.",
-                                "perms": "Prefix Command"
-                        }
-                ]
-        },
-        {
-                "id": "starboard",
-                "title": "📦 Starboard",
-                "note": "Commands extracted from cogs/starboard.py",
-                "commands": [
-                        {
-                                "cmd": ",sb",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command · aliases: starboard"
-                        },
-                        {
-                                "cmd": ",sb remove",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",sb set",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",sb status",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",sb top",
-                                "desc": "Show top users by starred posts.",
-                                "perms": "Prefix Subcommand"
-                        }
-                ]
-        },
-        {
-                "id": "stats",
-                "title": "📦 Stats",
-                "note": "Commands extracted from cogs/stats.py",
-                "commands": [
-                        {
-                                "cmd": ",inv",
-                                "desc": "Show invite stats for yourself or another member.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",inv reset",
-                                "desc": "Reset invites for all users or a specific member.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",inv top",
-                                "desc": "Show top inviters leaderboard.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",mstats",
-                                "desc": "Show member join/leave graph for last 30 days.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",stats",
-                                "desc": "Show today's stats + 7-day summary.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",stats week",
-                                "desc": "Show last 7 days breakdown with graph.",
-                                "perms": "Prefix Subcommand"
-                        }
-                ]
-        },
-        {
-                "id": "suggestion",
-                "title": "📦 Suggestion",
-                "note": "Commands extracted from cogs/suggestion.py",
-                "commands": [
-                        {
-                                "cmd": ",suggest",
-                                "desc": "Submit a suggestion for Bunny Bot.",
-                                "perms": "Prefix Command"
-                        }
-                ]
-        },
-        {
-                "id": "ticket",
-                "title": "📦 Ticket",
-                "note": "Commands extracted from cogs/ticket.py",
-                "commands": [
-                        {
-                                "cmd": ",ticket",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",ticket add",
-                                "desc": "Add a user to a ticket (staff only).",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",ticket claim",
-                                "desc": "Claim a ticket (staff only). Optionally pass channel mention or ticket number.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",ticket close",
-                                "desc": "Close a ticket (staff only). Reason is mandatory. Channel is archived and scheduled for deletion.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",ticket open",
-                                "desc": "Open a ticket. Reason is mandatory.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",ticket remove",
-                                "desc": "Remove a user's access from a ticket (staff only).",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",ticket reopen",
-                                "desc": "Re-open an archived/closed ticket (staff only). Cancels scheduled deletion and unlocks the channel.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",ticket setdelete",
-                                "desc": "Set auto-delete delay for archived tickets. Use seconds or 'never'.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",ticket setup",
-                                "desc": "Setup ticket system:",
-                                "perms": "Prefix Subcommand"
-                        }
-                ]
-        },
-        {
-                "id": "twitch",
-                "title": "📦 Twitch",
-                "note": "Commands extracted from cogs/twitch.py",
-                "commands": [
-                        {
-                                "cmd": ",twitch",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",twitch add",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",twitch list",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",twitch remove",
-                                "desc": "No description provided.",
-                                "perms": "Prefix Subcommand"
-                        }
-                ]
-        },
-        {
-                "id": "tz",
-                "title": "📦 Tz",
-                "note": "Commands extracted from cogs/tz.py",
-                "commands": [
-                        {
-                                "cmd": ",tz",
-                                "desc": "Show local time.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",tz set",
-                                "desc": "Set your timezone by city name (e.g. \"London\" or \"New York, USA\").",
-                                "perms": "Prefix Subcommand"
-                        }
-                ]
-        },
-        {
                 "id": "utility",
-                "title": "📦 Utility",
+                "title": "🧰 Utility",
                 "note": "Commands extracted from cogs/utility.py",
                 "commands": [
                         {
@@ -2206,72 +2124,53 @@
                 ]
         },
         {
-                "id": "vanity",
-                "title": "📦 Vanity",
-                "note": "Commands extracted from cogs/vanity.py",
+                "id": "antinuke",
+                "title": "🧱 AntiNuke",
+                "note": "Commands extracted from cogs/antinuke.py",
                 "commands": [
                         {
-                                "cmd": ",vanity",
-                                "desc": "Show current vanity settings for this guild.",
-                                "perms": "Prefix Command"
-                        },
-                        {
-                                "cmd": ",vanity clear",
-                                "desc": "Clear vanity configuration (server owner only).",
-                                "perms": "Prefix Subcommand"
-                        },
-                        {
-                                "cmd": ",vanity set",
-                                "desc": "Set vanity system (server owner only).",
-                                "perms": "Prefix Subcommand"
-                        }
-                ]
-        },
-        {
-                "id": "verification",
-                "title": "📦 Verification",
-                "note": "Commands extracted from cogs/verification.py",
-                "commands": [
-                        {
-                                "cmd": ",verify",
+                                "cmd": ",an",
                                 "desc": "No description provided.",
-                                "perms": "Prefix Command"
+                                "perms": "Prefix Command · aliases: antinuke"
                         },
                         {
-                                "cmd": ",verify disable",
+                                "cmd": ",an defaultpun",
                                 "desc": "No description provided.",
                                 "perms": "Prefix Subcommand"
                         },
                         {
-                                "cmd": ",verify enable",
+                                "cmd": ",an denybotjoins",
                                 "desc": "No description provided.",
                                 "perms": "Prefix Subcommand"
-                        }
-                ]
-        },
-        {
-                "id": "youtube",
-                "title": "📦 Youtube",
-                "note": "Commands extracted from cogs/youtube.py",
-                "commands": [
-                        {
-                                "cmd": ",youtube",
-                                "desc": "Main youtube group: add/remove/list",
-                                "perms": "Prefix Command"
                         },
                         {
-                                "cmd": ",youtube add",
-                                "desc": "Add a YouTube channel to announce when it goes live.",
+                                "cmd": ",an disable",
+                                "desc": "No description provided.",
                                 "perms": "Prefix Subcommand"
                         },
                         {
-                                "cmd": ",youtube list",
-                                "desc": "List configured YouTube channels for this guild.",
+                                "cmd": ",an enable",
+                                "desc": "No description provided.",
                                 "perms": "Prefix Subcommand"
                         },
                         {
-                                "cmd": ",youtube remove",
-                                "desc": "Remove a YouTube channel from announcements.",
+                                "cmd": ",an pun",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",an settings",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",an threshold",
+                                "desc": "No description provided.",
+                                "perms": "Prefix Subcommand"
+                        },
+                        {
+                                "cmd": ",an wl",
+                                "desc": "No description provided.",
                                 "perms": "Prefix Subcommand"
                         }
                 ]
